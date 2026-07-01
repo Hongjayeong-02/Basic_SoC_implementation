@@ -1,0 +1,96 @@
+$date
+    Jun 30, 2026  22:30:49
+$end
+$version
+    TOOL:	xmsim(64)	22.03-s012
+$end
+$timescale
+    1 ps
+$end
+
+$scope module tb_pipeline $end
+
+$scope module uut $end
+$var wire      1 !    clk  $end
+$var wire      1 "    rst_n  $end
+$var wire     10 #    in1 [9:0] $end
+$var wire     10 $    in2 [9:0] $end
+$var wire     10 %    in3 [9:0] $end
+$var wire      1 &    state  $end
+$var reg      12 '    out [11:0] $end
+$var reg      11 (    temp_sum [10:0] $end
+$var reg      10 )    in3_save [9:0] $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+0!
+0"
+b0 #
+b0 $
+b0 %
+0&
+b0 '
+b0 (
+b0 )
+$end
+#5000
+1!
+#10000
+0!
+#15000
+1!
+#20000
+0!
+b11110 %
+b10100 $
+b1010 #
+1"
+#25000
+1!
+b11110 (
+b11110 )
+#30000
+0!
+#35000
+1!
+b111100 '
+#40000
+0!
+b100101100 %
+b11001000 $
+b1100100 #
+#45000
+1!
+b100101100 (
+b100101100 )
+#50000
+0!
+#55000
+1!
+b1001011000 '
+#60000
+0!
+b1111111111 %
+b1111111111 $
+b1111111111 #
+#65000
+1!
+b11111111110 (
+b1111111111 )
+#70000
+0!
+#75000
+1!
+b101111111101 '
+#80000
+0!
+#85000
+1!
+#90000
+0!
+#95000
+1!
+#100000

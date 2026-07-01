@@ -1,0 +1,80 @@
+$date
+    Jul  1, 2026  02:17:54
+$end
+$version
+    TOOL:	xmsim(64)	22.03-s012
+$end
+$timescale
+    1 ps
+$end
+
+$scope module tb_interrupt_controller $end
+
+$scope module uut $end
+$var wire      8 !    i_int [7:0] $end
+$var wire      1 "    i_intAck  $end
+$var reg       3 #    o_intId [2:0] $end
+$var reg       1 $    o_intReq $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b0 !
+0"
+b0 #
+0$
+$end
+#10000
+b1 !
+1$
+#20000
+b10 !
+0$
+1$
+b1 #
+#30000
+b100 !
+0$
+b0 #
+1$
+b10 #
+#40000
+b1000 !
+0$
+b0 #
+1$
+b11 #
+#50000
+b10000 !
+0$
+b0 #
+1$
+b100 #
+#60000
+b100000 !
+0$
+b0 #
+1$
+b101 #
+#70000
+b1000000 !
+0$
+b0 #
+1$
+b110 #
+#80000
+b10000000 !
+0$
+b0 #
+1$
+b111 #
+#90000
+1"
+0$
+b0 #
+#100000
+b0 !
+0"
+#110000

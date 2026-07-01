@@ -1,0 +1,15 @@
+xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	22.03-s012: Started on Jul 01, 2026 at 00:51:12 KST
+xmvlog
+    -MESS
+    -linedebug
+    ./gpio_mux.v
+    ./tb_gpio_mux.v
+
+file: ./gpio_mux.v
+	module work_lib.gpio_mux
+		errors: 0, warnings: 0
+file: ./tb_gpio_mux.v
+	module work_lib.tb_gpio_mux
+		errors: 0, warnings: 0
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Jul 01, 2026 at 00:51:12 KST  (total: 00:00:00)

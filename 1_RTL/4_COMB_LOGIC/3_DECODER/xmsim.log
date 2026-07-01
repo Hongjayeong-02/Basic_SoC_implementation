@@ -1,0 +1,38 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Jul 01, 2026 at 19:15:55 KST
+xmsim
+    -gui
+    -MESS
+    tb_bcd_to_7seg
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_bcd_to_7seg.i_bcd tb_bcd_to_7seg.o_seg
+Created probe 1
+xcelium> run
+Time=0 | i_bcd Input=0000 | Seven Segment Output=1111110
+Time=10000 | i_bcd Input=0001 | Seven Segment Output=0110000
+Time=20000 | i_bcd Input=0010 | Seven Segment Output=1101101
+Time=30000 | i_bcd Input=0011 | Seven Segment Output=1111001
+Time=40000 | i_bcd Input=0100 | Seven Segment Output=0110011
+Time=50000 | i_bcd Input=0101 | Seven Segment Output=1011011
+Time=60000 | i_bcd Input=0110 | Seven Segment Output=1011111
+Time=70000 | i_bcd Input=0111 | Seven Segment Output=1110000
+Time=80000 | i_bcd Input=1000 | Seven Segment Output=1111111
+Time=90000 | i_bcd Input=1001 | Seven Segment Output=1111011
+Time=100000 | i_bcd Input=1010 | Seven Segment Output=0000000
+Time=110000 | i_bcd Input=1011 | Seven Segment Output=0000000
+Time=120000 | i_bcd Input=1100 | Seven Segment Output=0000000
+Time=130000 | i_bcd Input=1101 | Seven Segment Output=0000000
+Time=140000 | i_bcd Input=1110 | Seven Segment Output=0000000
+Time=150000 | i_bcd Input=1111 | Seven Segment Output=0000000
+Simulation complete via $finish(1) at time 160 NS + 0
+./tb_bcd_to_7seg.v:39 	$finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Jul 01, 2026 at 19:16:51 KST  (total: 00:00:56)

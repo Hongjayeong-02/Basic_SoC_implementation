@@ -1,0 +1,10 @@
+s1(25Jun2026:23:58:47):  xrun -gui pipeline.v 
+s2(26Jun2026:00:00:29):  xrun -gui pipeline.v tb_pipeline.v 
+s3(26Jun2026:00:03:25):  xrun -gui -access +rwc pipeline.v tb_pipeline.v 
+s4(26Jun2026:00:04:26):  xrun -gui -access +rwc pipeline.v tb_pipeline.v 
+s5(26Jun2026:00:08:07):  xrun -gui -access +rwc pipeline.v tb_pipeline.v 
+s6(26Jun2026:00:09:19):  xrun -gui -access +rwc pipeline.v tb_pipeline.v 
+s7(26Jun2026:00:15:55):  xrun -gui -access +rwc pipeline.v tb_pipeline.v 
+s8(26Jun2026:00:16:47):  xrun -gui -access +rwc pipeline.v tb_pipeline.v 
+s9(26Jun2026:00:17:28):  xrun -gui -access +rwc pipeline.v tb_pipeline.v 
+s10(26Jun2026:00:47:48):  xrun -access +rwc -gui pipeline.v tb_pipeline.v 

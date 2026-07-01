@@ -1,0 +1,29 @@
+xmelab(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmelab(64)	22.03-s012: Started on Jul 01, 2026 at 00:51:12 KST
+xmelab
+    -MESS
+    -access rwc
+    tb_gpio_mux
+
+	Elaborating the design hierarchy:
+		Caching library 'work_lib' ....... Done
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		work_lib.gpio_mux:module <0x4a5a9218>
+			streams:   1, words:   781
+		work_lib.tb_gpio_mux:module <0x4bf31945>
+			streams:   7, words:  5079
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               5       5
+		Scalar wires:            5       -
+		Vectored wires:          1       -
+		Initial blocks:          2       2
+		Cont. assignments:       1       1
+		Pseudo assignments:      5       5
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: work_lib.tb_gpio_mux:module
+TOOL:	xmelab(64)	22.03-s012: Exiting on Jul 01, 2026 at 00:51:12 KST  (total: 00:00:00)
