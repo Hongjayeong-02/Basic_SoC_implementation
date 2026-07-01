@@ -1,30 +1,29 @@
 xmelab(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xmelab(64)	22.03-s012: Started on Jul 02, 2026 at 00:20:33 KST
+TOOL:	xmelab(64)	22.03-s012: Started on Jul 02, 2026 at 01:41:20 KST
 xmelab
     -MESS
     -access rwc
-    tb_bidirectional_bus_driver
+    tb_d_latch
 
 	Elaborating the design hierarchy:
 		Caching library 'work_lib' ....... Done
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		work_lib.bidirectional_bus_driver:module <0x2832188a>
-			streams:   2, words:   531
-		work_lib.tb_bidirectional_bus_driver:module <0x2da7e402>
-			streams:   6, words:  7949
+		work_lib.d_latch:module <0x34360753>
+			streams:   2, words:   575
+		work_lib.tb_d_latch:module <0x5d13deb6>
+			streams:   5, words:  4707
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 2       2
-		Resolved nets:           0       1
 		Registers:               3       3
 		Scalar wires:            1       -
-		Vectored wires:          5       -
+		Vectored wires:          2       -
+		Always blocks:           2       2
 		Initial blocks:          2       2
-		Cont. assignments:       3       3
 		Pseudo assignments:      2       2
 		Simulation timescale:  1ps
-	Writing initial simulation snapshot: work_lib.tb_bidirectional_bus_driver:module
-TOOL:	xmelab(64)	22.03-s012: Exiting on Jul 02, 2026 at 00:20:34 KST  (total: 00:00:01)
+	Writing initial simulation snapshot: work_lib.tb_d_latch:module
+TOOL:	xmelab(64)	22.03-s012: Exiting on Jul 02, 2026 at 01:41:20 KST  (total: 00:00:00)
