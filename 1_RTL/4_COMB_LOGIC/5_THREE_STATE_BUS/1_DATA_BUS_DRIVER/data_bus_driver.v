@@ -11,14 +11,14 @@ module data_bus_driver(
 
 );
 
-input [7:0] i_dataA	;
-input [7:0] i_dataB	;
+input [31:0] i_dataA	;
+input [31:0] i_dataB	;
 input	    i_enA	;
 input	    i_enB	;
 
-output [7:0] o_busData	;
+output [31:0] o_busData	;
 
-assign o_busData = (i_enA) ? i_dataA : 8'bzzzzzzzz;
-assign o_busData = (i_enB) ? i_dataB : 8'bzzzzzzzz;
+assign o_busData = (i_enA) ? i_dataA : 32'bz;
+assign o_busData = (i_enB) ? i_dataB : 32'bz;
 
 endmodule

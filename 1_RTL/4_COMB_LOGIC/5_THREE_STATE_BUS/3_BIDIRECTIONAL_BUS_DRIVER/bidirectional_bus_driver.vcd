@@ -1,0 +1,41 @@
+$date
+    Jul  1, 2026  23:53:03
+$end
+$version
+    TOOL:	xmsim(64)	22.03-s012
+$end
+$timescale
+    1 ps
+$end
+
+$scope module tb_bidirectional_bus_driver $end
+
+$scope module uut $end
+$var wire     32 !    i_dataToBus [31:0] $end
+$var wire      1 "    i_send  $end
+$var wire     32 #    o_dataFromBus [31:0] $end
+$var wire     32 $    io_busData [31:0] $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b10010001101000101011001111000 !
+0"
+b10101011110011011110111100010010 #
+b10101011110011011110111100010010 $
+$end
+#10000
+1"
+bz $
+bz #
+b10010001101000101011001111000 $
+b10010001101000101011001111000 #
+#20000
+0"
+bx1xx1xxx11x1xxx1x1x11xx1111xxx $
+bx1xx1xxx11x1xxx1x1x11xx1111xxx #
+b11111111111111111111111111111111 $
+b11111111111111111111111111111111 #
+#30000

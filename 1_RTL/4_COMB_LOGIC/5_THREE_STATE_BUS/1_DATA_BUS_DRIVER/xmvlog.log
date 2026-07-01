@@ -1,5 +1,5 @@
 xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xmvlog(64)	22.03-s012: Started on Jul 01, 2026 at 20:28:25 KST
+TOOL:	xmvlog(64)	22.03-s012: Started on Jul 01, 2026 at 23:59:43 KST
 xmvlog
     -MESS
     -linedebug
@@ -12,4 +12,4 @@ file: ./data_bus_driver.v
 file: ./tb_data_bus_driver.v
 	module work_lib.tb_data_bus_driver
 		errors: 0, warnings: 0
-TOOL:	xmvlog(64)	22.03-s012: Exiting on Jul 01, 2026 at 20:28:25 KST  (total: 00:00:00)
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Jul 01, 2026 at 23:59:43 KST  (total: 00:00:00)

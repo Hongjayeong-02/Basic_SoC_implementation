@@ -1,30 +1,29 @@
 xmelab(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xmelab(64)	22.03-s012: Started on Jul 01, 2026 at 23:59:46 KST
+TOOL:	xmelab(64)	22.03-s012: Started on Jul 01, 2026 at 23:30:18 KST
 xmelab
     -MESS
     -access rwc
-    tb_data_bus_driver
+    tb_multiplexed_bus_driver
 
 	Elaborating the design hierarchy:
 		Caching library 'work_lib' ....... Done
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		work_lib.data_bus_driver:module <0x52295747>
-			streams:   2, words:   790
-		work_lib.tb_data_bus_driver:module <0x1f5edc22>
-			streams:   7, words:  9034
+		work_lib.multiplexed_bus_driver:module <0x46de6261>
+			streams:   1, words:  1312
+		work_lib.tb_multiplexed_bus_driver:module <0x3d04d16a>
+			streams:   7, words:  9229
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 2       2
-		Resolved nets:           0       1
-		Registers:               4       4
+		Registers:               5       5
 		Scalar wires:            2       -
-		Vectored wires:          5       -
+		Vectored wires:          3       -
+		Always blocks:           1       1
 		Initial blocks:          2       2
-		Cont. assignments:       2       2
 		Pseudo assignments:      4       4
 		Simulation timescale:  1ps
-	Writing initial simulation snapshot: work_lib.tb_data_bus_driver:module
-TOOL:	xmelab(64)	22.03-s012: Exiting on Jul 01, 2026 at 23:59:46 KST  (total: 00:00:00)
+	Writing initial simulation snapshot: work_lib.tb_multiplexed_bus_driver:module
+TOOL:	xmelab(64)	22.03-s012: Exiting on Jul 01, 2026 at 23:30:18 KST  (total: 00:00:00)

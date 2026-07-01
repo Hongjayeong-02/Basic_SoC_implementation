@@ -1,0 +1,25 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Jul 01, 2026 at 23:52:45 KST
+xmsim
+    -gui
+    -MESS
+    tb_bidirectional_bus_driver
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_bidirectional_bus_driver.i_dataToBus tb_bidirectional_bus_driver.i_send tb_bidirectional_bus_driver.io_busData tb_bidirectional_bus_driver.o_dataFromBus tb_bidirectional_bus_driver.tb_busData
+Created probe 1
+xcelium> run
+T=0 | send=0 | ToBus=12345678 | Bus=abcdef12 | FromBus=abcdef12
+T=10000 | send=1 | ToBus=12345678 | Bus=12345678 | FromBus=12345678
+T=20000 | send=0 | ToBus=12345678 | Bus=ffffffff | FromBus=ffffffff
+Simulation complete via $finish(1) at time 30 NS + 0
+./tb_bidirectional_bus_driver.v:50 	$finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Jul 01, 2026 at 23:54:16 KST  (total: 00:01:31)

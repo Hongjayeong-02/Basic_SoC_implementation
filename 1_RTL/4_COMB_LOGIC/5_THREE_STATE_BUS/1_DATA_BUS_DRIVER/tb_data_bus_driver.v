@@ -2,12 +2,12 @@
 
 module tb_data_bus_driver;
 
-reg [7:0] i_dataA	;
-reg [7:0] i_dataB	;
+reg [31:0] i_dataA	;
+reg [31:0] i_dataB	;
 reg       i_enA		;
 reg       i_enB		;
 
-wire [7:0] o_busData	;
+wire [31:0] o_busData	;
 
 data_bus_driver uut(
 
@@ -29,8 +29,8 @@ initial begin
 	$time, i_enA, i_enB,
 	i_dataA, i_dataB, o_busData);
 
-	i_dataA = 8'h55;
-	i_dataB = 8'hAA;
+	i_dataA = 32'h12345678;
+	i_dataB = 32'hABCDEF12;
 	i_enA 	= 0;
 	i_enB 	= 0;
 	#10;
