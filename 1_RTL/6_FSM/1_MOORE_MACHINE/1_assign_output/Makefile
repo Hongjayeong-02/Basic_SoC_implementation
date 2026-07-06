@@ -12,10 +12,10 @@ compile:
 	xmvlog -MESS -linedebug ./*v
 
 elab: 
-	xmelab -MESS -access rwc tb_simple_register
+	xmelab -MESS -access rwc tb_FSM1
 
 sim: 
-	xmsim -gui -MESS tb_simple_register
+	xmsim -gui -MESS tb_FSM1
 
 all: clean set compile elab sim
 

@@ -1,0 +1,15 @@
+xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	22.03-s012: Started on Jul 07, 2026 at 00:45:19 KST
+xmvlog
+    -MESS
+    -linedebug
+    ./FSM1.v
+    ./tb_FSM1.v
+
+file: ./FSM1.v
+	module work_lib.FSM1
+		errors: 0, warnings: 0
+file: ./tb_FSM1.v
+	module work_lib.tb_FSM1
+		errors: 0, warnings: 0
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Jul 07, 2026 at 00:45:19 KST  (total: 00:00:00)
