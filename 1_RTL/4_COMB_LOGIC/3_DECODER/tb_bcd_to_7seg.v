@@ -2,7 +2,7 @@
 
 module tb_bcd_to_7seg;
 
-reg 	[3:0	] i_bcd;
+reg 	[31:0	] i_bcd;
 wire 	[6:0	] o_seg;
 
 bcd_to_7seg uut (
@@ -18,23 +18,23 @@ end
 initial begin
 	$monitor("Time=%0t | i_bcd Input=%b | Seven Segment Output=%b", $time, i_bcd, o_seg);
 
-	i_bcd = 4'b0000; #10;
-	i_bcd = 4'b0001; #10;
-	i_bcd = 4'b0010; #10;
-	i_bcd = 4'b0011; #10;
-	i_bcd = 4'b0100; #10;
-	i_bcd = 4'b0101; #10;
-	i_bcd = 4'b0110; #10;
-	i_bcd = 4'b0111; #10; 
-	i_bcd = 4'b1000; #10;
-	i_bcd = 4'b1001; #10;
+	i_bcd = 32'd0; #10;
+	i_bcd = 32'd1; #10;
+	i_bcd = 32'd2; #10;
+	i_bcd = 32'd3; #10;
+	i_bcd = 32'd4; #10;
+	i_bcd = 32'd5; #10;
+	i_bcd = 32'd6; #10;
+	i_bcd = 32'd7; #10; 
+	i_bcd = 32'd8; #10;
+	i_bcd = 32'd9; #10;
 
-	i_bcd = 4'b1010; #10;
-	i_bcd = 4'b1011; #10;
-	i_bcd = 4'b1100; #10;
-	i_bcd = 4'b1101; #10;
-	i_bcd = 4'b1110; #10;
-	i_bcd = 4'b1111; #10;
+	i_bcd = 32'd10; #10;
+	i_bcd = 32'd11; #10;
+	i_bcd = 32'd12; #10;
+	i_bcd = 32'd13; #10;
+	i_bcd = 32'd14; #10;
+	i_bcd = 32'd15; #10;
 
 	$finish;
 end 	

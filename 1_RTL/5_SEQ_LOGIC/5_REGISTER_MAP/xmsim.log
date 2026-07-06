@@ -1,0 +1,31 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Jul 06, 2026 at 21:32:35 KST
+xmsim
+    -gui
+    -MESS
+    tb_simple_register
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_simple_register.uut.clk tb_simple_register.uut.i_wdata tb_simple_register.uut.i_wen tb_simple_register.uut.o_rdata tb_simple_register.uut.r_reg32 tb_simple_register.uut.rst_n
+Created probe 1
+xcelium> run
+T=0 | rst=0 | wdata=0 | rdata=00000000         x
+T=20000 | rst=1 | wdata=0 | rdata=00000000         x
+T=25000 | rst=1 | wdata=0 | rdata=00000000         0
+T=30000 | rst=1 | wdata=1 | rdata=12345678         0
+T=40000 | rst=1 | wdata=0 | rdata=12345678         0
+T=60000 | rst=1 | wdata=1 | rdata=abcdef12         0
+T=70000 | rst=1 | wdata=0 | rdata=abcdef12         0
+T=90000 | rst=0 | wdata=0 | rdata=abcdef12         0
+T=110000 | rst=1 | wdata=0 | rdata=abcdef12         0
+Simulation complete via $finish(1) at time 130 NS + 0
+./tb_simple_register.v:59 	#20 $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Jul 06, 2026 at 21:33:36 KST  (total: 00:01:01)

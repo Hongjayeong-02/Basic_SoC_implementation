@@ -1,28 +1,28 @@
 xmelab(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xmelab(64)	22.03-s012: Started on Jul 05, 2026 at 19:14:57 KST
+TOOL:	xmelab(64)	22.03-s012: Started on Jul 06, 2026 at 19:26:40 KST
 xmelab
     -MESS
     -access rwc
-    tb_bcd_to_7seg
+    tb_fdivider
 
 	Elaborating the design hierarchy:
 		Caching library 'work_lib' ....... Done
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		work_lib.bcd_to_7seg:module <0x4a4c549a>
-			streams:   1, words:  2507
-		work_lib.tb_bcd_to_7seg:module <0x278b122b>
-			streams:   4, words: 10215
+		work_lib.fdivider:module <0x2f569534>
+			streams:   7, words:  2664
+		work_lib.tb_fdivider:module <0x06284981>
+			streams:   6, words:  4966
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 2       2
-		Registers:               2       2
-		Vectored wires:          2       -
-		Always blocks:           1       1
+		Registers:               4       4
+		Scalar wires:            3       -
+		Always blocks:           3       3
 		Initial blocks:          2       2
-		Pseudo assignments:      1       1
+		Pseudo assignments:      2       2
 		Simulation timescale:  1ps
-	Writing initial simulation snapshot: work_lib.tb_bcd_to_7seg:module
-TOOL:	xmelab(64)	22.03-s012: Exiting on Jul 05, 2026 at 19:14:58 KST  (total: 00:00:01)
+	Writing initial simulation snapshot: work_lib.tb_fdivider:module
+TOOL:	xmelab(64)	22.03-s012: Exiting on Jul 06, 2026 at 19:26:40 KST  (total: 00:00:00)

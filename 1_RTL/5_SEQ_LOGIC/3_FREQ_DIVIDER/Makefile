@@ -12,10 +12,10 @@ compile:
 	xmvlog -MESS -linedebug ./*v
 
 elab: 
-	xmelab -MESS -access rwc tb_data_bus_driver
+	xmelab -MESS -access rwc tb_fdivider
 
 sim: 
-	xmsim -gui -MESS tb_data_bus_driver
+	xmsim -gui -MESS tb_fdivider
 
 all: clean set compile elab sim
 

@@ -1,0 +1,15 @@
+xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	22.03-s012: Started on Jul 06, 2026 at 19:26:40 KST
+xmvlog
+    -MESS
+    -linedebug
+    ./fdivider.v
+    ./tb_fdivider.v
+
+file: ./fdivider.v
+	module work_lib.fdivider
+		errors: 0, warnings: 0
+file: ./tb_fdivider.v
+	module work_lib.tb_fdivider
+		errors: 0, warnings: 0
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Jul 06, 2026 at 19:26:40 KST  (total: 00:00:00)
