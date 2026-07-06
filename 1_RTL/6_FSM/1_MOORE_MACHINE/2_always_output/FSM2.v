@@ -28,6 +28,30 @@ reg [1:0] next;
 reg rd;
 reg ds;
 
+always @(posedge clk, negedge rst_n) begin
+	if (!rst_n) state <= IDLE;
+	else	    state <= next;
+end
 
+always @(posedge clk, negedge rst_n) begin
+	next = 2'bx; rd = 1'b0; ds = 1'b0;
+	case(state)
+		IDLE : if (go) next = READ;
+			else next = IDLE;
+		READ : begin
+			rd = 1'b1;
+			next = DLY;
+			end
+		DLY : begin
+			rd = 1'b1;
+			if(!ws) next = DONE;
+			else next = READ;
+			end
+		DONE : begin
+			ds = 1'b1;
+			next = IDLE;
+			end
+	endcase
+end
 
 endmodule

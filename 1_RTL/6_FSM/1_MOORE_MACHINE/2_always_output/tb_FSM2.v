@@ -22,6 +22,15 @@ FSM2 DUT (
 always #5 clk = ~clk;
 
 initial begin
+	clk = 1'b0; rst_n = 1'b0;
+	go = 1'b0; ws = 1'b0;
+
+	#100 rst_n = 1'b1;
+
+	#100 go = 1'b1; ws = 1'b1;
+	#100 ws = 1'b0;
+	#100 rst_n = 1'b0;
+	#100; $finish;
 
 end
 
