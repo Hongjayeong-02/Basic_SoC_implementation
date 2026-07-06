@@ -2,7 +2,7 @@
 
 module tb_shift_register_sipo;
 
-localparam WIDTH = 8;
+localparam WIDTH = 32;
 
 reg clk		;
 reg rst_n	;

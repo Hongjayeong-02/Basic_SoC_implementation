@@ -18,8 +18,8 @@ output reg [WIDTH-1:0]  o_parallel_out;
 
 
 always @(posedge clk or negedge rst_n) begin
-	if(rst_n)
-		o_parallel_out <= 32'b0;
+	if(!rst_n)
+		o_parallel_out <= {WIDTH{1'b0}};
 	else
 		o_parallel_out <= {o_parallel_out[WIDTH-2:0], i_serial_in};
 end

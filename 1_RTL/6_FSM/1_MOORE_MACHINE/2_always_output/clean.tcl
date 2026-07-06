@@ -9,7 +9,7 @@ echo "define WORK work_lib" >> ./hdl.var
 xmvlog -MESS -linedebug ./*v
 
 ## Elaborate compiled sources
-xmelab -MESS -access rwc tb_shift_register_sipo
+xmelab -MESS -access rwc tb_simple_register
 
 ## run simulation in CLI mode
-xmsim -MESS tb_shift_register_sipo -gui
+xmsim -MESS tb_simple_register -gui

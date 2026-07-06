@@ -1,5 +1,5 @@
 xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xmsim(64)	22.03-s012: Started on Jul 06, 2026 at 22:41:12 KST
+TOOL:	xmsim(64)	22.03-s012: Started on Jul 06, 2026 at 23:26:35 KST
 xmsim
     -gui
     -MESS
@@ -10,7 +10,111 @@ xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mod
 -------------------------------------
 Relinquished control to SimVision...
 xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_shift_register_sipo.clk tb_shift_register_sipo.i_serial_in tb_shift_register_sipo.o_parallel_out tb_shift_register_sipo.rst_n
+Created probe 1
+xcelium> run
+time=0 | reset=0 | serial_in=0 | parallel_out=00000000000000000000000000000000
+time=15000 | reset=1 | serial_in=0 | parallel_out=00000000000000000000000000000000
+time=30000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000000000000
+time=35000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000000000001
+time=45000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000000000011
+time=55000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000000000111
+time=65000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000000001111
+time=75000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000000011111
+time=85000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000000111111
+time=90000 | reset=1 | serial_in=0 | parallel_out=00000000000000000000000000111111
+time=95000 | reset=1 | serial_in=0 | parallel_out=00000000000000000000000001111110
+time=100000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000001111110
+time=105000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000011111101
+time=115000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000000111111011
+time=120000 | reset=1 | serial_in=0 | parallel_out=00000000000000000000000111111011
+time=125000 | reset=1 | serial_in=0 | parallel_out=00000000000000000000001111110110
+time=130000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000001111110110
+time=135000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000011111101101
+time=145000 | reset=1 | serial_in=1 | parallel_out=00000000000000000000111111011011
+time=150000 | reset=1 | serial_in=0 | parallel_out=00000000000000000000111111011011
+time=155000 | reset=1 | serial_in=0 | parallel_out=00000000000000000001111110110110
+time=160000 | reset=1 | serial_in=1 | parallel_out=00000000000000000001111110110110
+time=165000 | reset=1 | serial_in=1 | parallel_out=00000000000000000011111101101101
+time=170000 | reset=1 | serial_in=0 | parallel_out=00000000000000000011111101101101
+time=175000 | reset=1 | serial_in=0 | parallel_out=00000000000000000111111011011010
+time=180000 | reset=1 | serial_in=1 | parallel_out=00000000000000000111111011011010
+time=185000 | reset=1 | serial_in=1 | parallel_out=00000000000000001111110110110101
+time=190000 | reset=1 | serial_in=0 | parallel_out=00000000000000001111110110110101
+time=195000 | reset=1 | serial_in=0 | parallel_out=00000000000000011111101101101010
+time=200000 | reset=1 | serial_in=1 | parallel_out=00000000000000011111101101101010
+time=205000 | reset=1 | serial_in=1 | parallel_out=00000000000000111111011011010101
+time=215000 | reset=1 | serial_in=1 | parallel_out=00000000000001111110110110101011
+time=220000 | reset=1 | serial_in=0 | parallel_out=00000000000001111110110110101011
+time=225000 | reset=1 | serial_in=0 | parallel_out=00000000000011111101101101010110
+time=230000 | reset=1 | serial_in=1 | parallel_out=00000000000011111101101101010110
+time=235000 | reset=1 | serial_in=1 | parallel_out=00000000000111111011011010101101
+time=240000 | reset=1 | serial_in=0 | parallel_out=00000000000111111011011010101101
+time=245000 | reset=1 | serial_in=0 | parallel_out=00000000001111110110110101011010
+time=255000 | reset=1 | serial_in=0 | parallel_out=00000000011111101101101010110100
+time=265000 | reset=1 | serial_in=0 | parallel_out=00000000111111011011010101101000
+time=270000 | reset=1 | serial_in=1 | parallel_out=00000000111111011011010101101000
+time=275000 | reset=1 | serial_in=1 | parallel_out=00000001111110110110101011010001
+time=280000 | reset=1 | serial_in=0 | parallel_out=00000001111110110110101011010001
+time=285000 | reset=1 | serial_in=0 | parallel_out=00000011111101101101010110100010
+time=290000 | reset=1 | serial_in=1 | parallel_out=00000011111101101101010110100010
+time=295000 | reset=1 | serial_in=1 | parallel_out=00000111111011011010101101000101
+time=305000 | reset=1 | serial_in=1 | parallel_out=00001111110110110101011010001011
+time=315000 | reset=1 | serial_in=1 | parallel_out=00011111101101101010110100010111
+time=325000 | reset=1 | serial_in=1 | parallel_out=00111111011011010101101000101111
+time=330000 | reset=1 | serial_in=0 | parallel_out=00111111011011010101101000101111
+time=335000 | reset=1 | serial_in=0 | parallel_out=01111110110110101011010001011110
+time=345000 | reset=1 | serial_in=0 | parallel_out=11111101101101010110100010111100
+time=355000 | reset=1 | serial_in=0 | parallel_out=11111011011010101101000101111000
+time=365000 | reset=1 | serial_in=0 | parallel_out=11110110110101011010001011110000
+time=370000 | reset=1 | serial_in=1 | parallel_out=11110110110101011010001011110000
+time=375000 | reset=1 | serial_in=1 | parallel_out=11101101101010110100010111100001
+time=380000 | reset=1 | serial_in=0 | parallel_out=11101101101010110100010111100001
+time=385000 | reset=1 | serial_in=0 | parallel_out=11011011010101101000101111000010
+time=390000 | reset=1 | serial_in=1 | parallel_out=11011011010101101000101111000010
+time=395000 | reset=1 | serial_in=1 | parallel_out=10110110101011010001011110000101
+time=405000 | reset=1 | serial_in=1 | parallel_out=01101101010110100010111100001011
+time=415000 | reset=1 | serial_in=1 | parallel_out=11011010101101000101111000010111
+time=425000 | reset=1 | serial_in=1 | parallel_out=10110101011010001011110000101111
+time=435000 | reset=1 | serial_in=1 | parallel_out=01101010110100010111100001011111
+time=440000 | reset=1 | serial_in=0 | parallel_out=01101010110100010111100001011111
+time=445000 | reset=1 | serial_in=0 | parallel_out=11010101101000101111000010111110
+time=455000 | reset=1 | serial_in=0 | parallel_out=10101011010001011110000101111100
+time=460000 | reset=1 | serial_in=1 | parallel_out=10101011010001011110000101111100
+time=465000 | reset=1 | serial_in=1 | parallel_out=01010110100010111100001011111001
+time=475000 | reset=1 | serial_in=1 | parallel_out=10101101000101111000010111110011
+time=485000 | reset=1 | serial_in=1 | parallel_out=01011010001011110000101111100111
+time=490000 | reset=1 | serial_in=0 | parallel_out=01011010001011110000101111100111
+time=495000 | reset=1 | serial_in=0 | parallel_out=10110100010111100001011111001110
+time=505000 | reset=1 | serial_in=0 | parallel_out=01101000101111000010111110011100
+time=515000 | reset=1 | serial_in=0 | parallel_out=11010001011110000101111100111000
+time=525000 | reset=1 | serial_in=0 | parallel_out=10100010111100001011111001110000
+time=535000 | reset=1 | serial_in=0 | parallel_out=01000101111000010111110011100000
+time=540000 | reset=1 | serial_in=1 | parallel_out=01000101111000010111110011100000
+time=545000 | reset=1 | serial_in=1 | parallel_out=10001011110000101111100111000001
+time=550000 | reset=1 | serial_in=0 | parallel_out=10001011110000101111100111000001
+time=555000 | reset=1 | serial_in=0 | parallel_out=00010111100001011111001110000010
+time=565000 | reset=1 | serial_in=0 | parallel_out=00101111000010111110011100000100
+time=570000 | reset=1 | serial_in=1 | parallel_out=00101111000010111110011100000100
+time=575000 | reset=1 | serial_in=1 | parallel_out=01011110000101111100111000001001
+time=585000 | reset=1 | serial_in=1 | parallel_out=10111100001011111001110000010011
+time=590000 | reset=1 | serial_in=0 | parallel_out=10111100001011111001110000010011
+time=595000 | reset=1 | serial_in=0 | parallel_out=01111000010111110011100000100110
+time=605000 | reset=1 | serial_in=0 | parallel_out=11110000101111100111000001001100
+time=615000 | reset=1 | serial_in=0 | parallel_out=11100001011111001110000010011000
+time=625000 | reset=1 | serial_in=0 | parallel_out=11000010111110011100000100110000
+time=635000 | reset=1 | serial_in=0 | parallel_out=10000101111100111000001001100000
+time=640000 | reset=1 | serial_in=1 | parallel_out=10000101111100111000001001100000
+time=645000 | reset=1 | serial_in=1 | parallel_out=00001011111001110000010011000001
+time=655000 | reset=1 | serial_in=1 | parallel_out=00010111110011100000100110000011
+time=665000 | reset=1 | serial_in=1 | parallel_out=00101111100111000001001100000111
+time=675000 | reset=1 | serial_in=1 | parallel_out=01011111001110000010011000001111
+time=685000 | reset=1 | serial_in=1 | parallel_out=10111110011100000100110000011111
+time=695000 | reset=1 | serial_in=1 | parallel_out=01111100111000001001100000111111
+Simulation complete via $finish(1) at time 700 NS + 0
+./tb_shift_register_sipo.v:39 		#50 $finish;
 xcelium> ^C
 xcelium> exit
-xmsim: *W,NORUNCMD: No 'run' command issued.
-TOOL:	xmsim(64)	22.03-s012: Exiting on Jul 06, 2026 at 22:41:25 KST  (total: 00:00:13)
+TOOL:	xmsim(64)	22.03-s012: Exiting on Jul 06, 2026 at 23:33:33 KST  (total: 00:06:58)
