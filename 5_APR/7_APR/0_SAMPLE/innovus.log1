@@ -1,0 +1,438 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.17-s086_1, built Tue Sep 24 10:51:50 PDT 2024
+Options:	-stylus 
+Date:		Wed Jul  8 19:54:17 2026
+Host:		kopo-seongnam (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (20cores*80cpus*Intel(R) Xeon(R) Gold 5218R CPU @ 2.10GHz 28160KB)
+OS:		CentOS Linux 7 (Core)
+
+License:
+		[19:54:17.158681] Configured Lic search path (22.01-s003): 5280@localhost
+
+		invs	Innovus Implementation System	22.1	Denied
+		invsb	Innovus Implementation System Basic	22.1	checkout succeeded
+		4 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /home/hah006/Basic_SoC_implementation/5_APR/7_APR/0_SAMPLE/innovus_temp_159198_29eb4cab-62f2-40ae-9aa4-f0bdefa84874_kopo-seongnam_hah006_zzu2TR.
+
+Change the soft stacksize limit to 0.2%RAM (770 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> set_db init_power_nets VDD
+@innovus 2> set_db init_ground_nets VSS
+@innovus 3> #################################
+read_mmmc sample.view
+#################################
+#@ Begin verbose source sample.view (pre)
+@file 1:
+@@file 2: create_library_set -name max_timing\
+   -timing ../../1_LIB/slow_vdd1v0_basicCells.lib
+@file 4:
+@@file 5: create_library_set -name min_timing\
+   -timing ../../1_LIB/fast_vdd1v0_basicCells.lib
+@file 7:
+@@file 8: create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+@@file 10: create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+@file 12:
+@@file 13: create_rc_corner -name rccorners\
+   -cap_table ../../4_CAP_TABLE/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech ../../5_QRC_TECH/gpdk045.tch
+@file 23:
+@@file 24: create_delay_corner -name max_delay\
+   -timing_condition {default_mapping_tc_1}\
+   -rc_corner rccorners
+@@file 27: create_delay_corner -name min_delay\
+   -timing_condition {default_mapping_tc_2}\
+   -rc_corner rccorners
+@file 30:
+@@file 31: create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    ../../2_CONSTRAINTS/0_SAMPLE/counter_sdc.sdc
+@file 34:
+@@file 35: create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+@@file 36: create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+@file 37:
+@@file 38: set_analysis_view -setup wc -hold bc
+@file 39:
+@file 40:
+#@ End verbose source sample.view
+Reading max_timing timing library '/home/hah006/Basic_SoC_implementation/5_APR/1_LIB/slow_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/hah006/Basic_SoC_implementation/5_APR/1_LIB/slow_vdd1v0_basicCells.lib)
+Read 480 cells in library 'slow_vdd1v0' 
+Reading min_timing timing library '/home/hah006/Basic_SoC_implementation/5_APR/1_LIB/fast_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/hah006/Basic_SoC_implementation/5_APR/1_LIB/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library 'fast_vdd1v0' 
+#################################
+read_physical -lef {../../3_LEF/gsclib045_tech.lef ../../3_LEF/gsclib045_macro.lef}
+#################################
+
+Loading LEF file ../../3_LEF/gsclib045_tech.lef ...
+Set DBUPerIGU to M2 pitch 400.
+
+Loading LEF file ../../3_LEF/gsclib045_macro.lef ...
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+#################################
+read_netlist ../../6_GLN/0_SAMPLE/counter_netlist.v
+#################################
+#% Begin Load netlist data ... (date=07/08 20:12:48, mem=1390.7M)
+*** Begin netlist parsing (mem=1642.9M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../../6_GLN/0_SAMPLE/counter_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1645.945M, initial mem = 662.375M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1645.9M) ***
+#% End Load netlist data ... (date=07/08 20:12:48, total cpu=0:00:00.1, real=0:00:00.0, peak res=1400.9M, current mem=1400.9M)
+Top level cell is counter.
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell counter ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+** info: there are 1055 modules.
+** info: there are 21 stdCell insts.
+** info: there are 21 stdCell insts with at least one signal pin.
+
+*** Memory Usage v#1 (Current mem = 1708.371M, initial mem = 662.375M) ***
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File ../../4_CAP_TABLE/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: wc
+    RC-Corner Name        : rccorners
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../../4_CAP_TABLE/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../../5_QRC_TECH/gpdk045.tch'
+ 
+ Analysis View: bc
+    RC-Corner Name        : rccorners
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../../4_CAP_TABLE/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '../../5_QRC_TECH/gpdk045.tch'
+Updating RC Grid density data for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../../2_CONSTRAINTS/0_SAMPLE/counter_sdc.sdc' ...
+Current (total cpu=0:02:11, real=0:18:32, peak res=1821.6M, current mem=1821.6M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../../2_CONSTRAINTS/0_SAMPLE/counter_sdc.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../../2_CONSTRAINTS/0_SAMPLE/counter_sdc.sdc, Line 10).
+
+counter
+INFO (CTE): Reading of timing constraints file ../../2_CONSTRAINTS/0_SAMPLE/counter_sdc.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1835.5M, current mem=1835.5M)
+Current (total cpu=0:02:11, real=0:18:32, peak res=1835.5M, current mem=1835.5M)
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Adjusting coreMargin left    to finFet grid (PlacementGrid) : after adjusting :2.6
+Adjusting coreMargin bottom  to finFet grid (PlacementGrid) : after adjusting :2.66
+Adjusting coreMargin right   to finFet grid (PlacementGrid) : after adjusting :2.6
+Adjusting coreMargin top     to finFet grid (PlacementGrid) : after adjusting :2.66
+Adjusting core size to PlacementGrid : width :12.2 height : 8.55
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+@innovus 3> The ring targets are set to core/block ring wires.
+add_rings command will consider rows while creating rings.
+add_rings command will disallow rings to go over rows.
+add_rings command will ignore shorts while creating rings.
+The ring targets are set to core/block ring wires.
+add_rings command will consider rows while creating rings.
+add_rings command will disallow rings to go over rows.
+add_rings command will ignore shorts while creating rings.
+
+
+viaInitial starts at Wed Jul  8 22:34:09 2026
+viaInitial ends at Wed Jul  8 22:34:09 2026
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2195.2M)
+**WARN: (IMPPP-193):	The currently specified top spacing 0.200000  might create min enclosed area violation. The required min enclosed area for layer Metal11 is 0.110000. If violation happens, increase the spacing to around 0.381662. The recommended spacing is the square root of min enclosure area.
+**WARN: (IMPPP-193):	The currently specified bottom spacing 0.200000  might create min enclosed area violation. The required min enclosed area for layer Metal11 is 0.110000. If violation happens, increase the spacing to around 0.381662. The recommended spacing is the square root of min enclosure area.
+**WARN: (IMPPP-193):	The currently specified left spacing 0.200000  might create min enclosed area violation. The required min enclosed area for layer Metal10 is 0.110000. If violation happens, increase the spacing to around 0.381662. The recommended spacing is the square root of min enclosure area.
+**WARN: (IMPPP-193):	The currently specified right spacing 0.200000  might create min enclosed area violation. The required min enclosed area for layer Metal10 is 0.110000. If violation happens, increase the spacing to around 0.381662. The recommended spacing is the square root of min enclosure area.
+Ring generation is complete.
+vias are now being generated.
+add_rings created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| Metal10|        4       |       NA       |
+|  Via10 |        8       |        0       |
+| Metal11|        4       |       NA       |
++--------+----------------+----------------+
+@innovus 3> add_stripes will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+add_stripes will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+add_stripes will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+add_stripes will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+
+Initialize fgc environment(mem: 2209.9M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+add_stripes created 5 wires.
+ViaGen created 10 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| Metal10|        5       |       NA       |
+|  Via10 |       10       |        0       |
++--------+----------------+----------------+
+@innovus 3> add_stripes will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+add_stripes will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+add_stripes will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+add_stripes will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+
+Initialize fgc environment(mem: 2209.9M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+**WARN: (IMPPP-193):	The currently specified  spacing 0.200000 in -spacing option might create min enclosed area violation. The required min enclosed area for layer Metal10 is 0.110000. If violation happens, increase the spacing to around 0.381662. The recommended spacing is the square root of min enclosure area.
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+**WARN: (IMPPP-354):	The power planner did not generate the vertical stripe at 4.130000 0.560000 4.130000 12.610000 with width 0.220000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, the stripe net is not contained by the power doamin, or the stripe would break the design rule.
+Type 'man IMPPP-354' for more detail.
+**WARN: (IMPPP-354):	The power planner did not generate the vertical stripe at 9.130000 0.560000 9.130000 12.610000 with width 0.220000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, the stripe net is not contained by the power doamin, or the stripe would break the design rule.
+Type 'man IMPPP-354' for more detail.
+**WARN: (IMPPP-354):	The power planner did not generate the vertical stripe at 14.130000 0.560000 14.130000 12.610000 with width 0.220000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, the stripe net is not contained by the power doamin, or the stripe would break the design rule.
+Type 'man IMPPP-354' for more detail.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (3.710000, 1.460000) (3.710000, 12.410000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (8.710000, 1.460000) (8.710000, 12.410000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (13.710000, 1.460000) (13.710000, 12.410000) because same wire already exists.
+Stripe generation is complete.
+vias are now being generated.
+add_stripes created 18 wires.
+ViaGen created 6 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| Metal10|       18       |       NA       |
+|  Via10 |        6       |        0       |
++--------+----------------+----------------+
+@innovus 3> add_stripes will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+add_stripes will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+add_stripes will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+add_stripes will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+
+Initialize fgc environment(mem: 2209.9M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+**WARN: (IMPPP-193):	The currently specified  spacing 0.200000 in -spacing option might create min enclosed area violation. The required min enclosed area for layer Metal10 is 0.110000. If violation happens, increase the spacing to around 0.381662. The recommended spacing is the square root of min enclosure area.
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+**WARN: (IMPPP-354):	The power planner did not generate the vertical stripe at 4.130000 0.560000 4.130000 12.610000 with width 0.220000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, the stripe net is not contained by the power doamin, or the stripe would break the design rule.
+Type 'man IMPPP-354' for more detail.
+**WARN: (IMPPP-354):	The power planner did not generate the vertical stripe at 9.130000 0.560000 9.130000 12.610000 with width 0.220000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, the stripe net is not contained by the power doamin, or the stripe would break the design rule.
+Type 'man IMPPP-354' for more detail.
+**WARN: (IMPPP-354):	The power planner did not generate the vertical stripe at 14.130000 0.560000 14.130000 12.610000 with width 0.220000 due to one of these reasons: the stripe would merge with rings, the stripe could not connect to any legal target, the stripe net is not contained by the power doamin, or the stripe would break the design rule.
+Type 'man IMPPP-354' for more detail.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (3.710000, 1.460000) (3.710000, 12.410000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (8.710000, 1.460000) (8.710000, 12.410000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (13.710000, 1.460000) (13.710000, 12.410000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (9.130000, 4.035000) (9.130000, 8.445000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (9.130000, 8.665000) (9.130000, 9.835000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (9.290000, 0.560000) (9.290000, 4.255000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (9.290000, 9.615000) (9.290000, 13.310000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (14.130000, 4.035000) (14.130000, 8.445000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (14.130000, 8.665000) (14.130000, 9.835000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (14.290000, 0.560000) (14.290000, 4.255000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (14.290000, 9.615000) (14.290000, 13.310000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (9.020000, 4.145000) (9.400000, 4.145000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (14.020000, 4.145000) (14.400000, 4.145000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (9.020000, 9.725000) (9.400000, 9.725000) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (14.020000, 9.725000) (14.400000, 9.725000) because same wire already exists.
+Stripe generation is complete.
+@innovus 3> add_stripes will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+add_stripes will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+add_stripes will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+add_stripes will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+
+Initialize fgc environment(mem: 2209.9M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2209.9M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Stripe generation is complete.
+vias are now being generated.
+**WARN: (IMPPP-532):	ViaGen Warning: The top layer and bottom layer have same direction but only orthogonal via is allowed between layer Metal1 & Metal10 at (3.60, 1.46) (3.82, 12.41).
+add_stripes created 2 wires.
+ViaGen created 40 vias, deleted 4 vias to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| Metal1 |        2       |       NA       |
+|  Via1  |        4       |        0       |
+|  Via2  |        4       |        0       |
+|  Via3  |        4       |        0       |
+|  Via4  |        4       |        0       |
+|  Via5  |        4       |        0       |
+|  Via6  |        4       |        0       |
+|  Via7  |        4       |        0       |
+|  Via8  |        4       |        0       |
+|  Via9  |        4       |        0       |
+|  Via10 |        4       |        4       |
++--------+----------------+----------------+
+@innovus 3> 
+--------------------------------------------------------------------------------
+Exiting Innovus on Wed Jul  8 22:43:00 2026
+  Total CPU time:     0:25:34
+  Total real time:    2:48:45
+  Peak memory (main): 1920.00MB
+
+
+*** Memory Usage v#1 (Current mem = 2209.887M, initial mem = 662.375M) ***
+*** Message Summary: 41 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:25:33, real=2:48:43, mem=2209.9M) ---

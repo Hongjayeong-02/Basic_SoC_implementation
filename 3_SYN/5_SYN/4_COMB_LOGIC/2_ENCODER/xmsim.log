@@ -1,0 +1,33 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Jul 01, 2026 at 02:17:23 KST
+xmsim
+    -gui
+    -MESS
+    tb_interrupt_controller
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> run
+Simulation complete via $finish(1) at time 110 NS + 0
+./tb_interrupt_controller.v:61 		$finish;
+xcelium> probe -create -shm tb_interrupt_controller.i_int tb_interrupt_controller.i_intAck tb_interrupt_controller.o_intId tb_interrupt_controller.o_intReq
+Created default SHM database xcelium.shm
+Created probe 1
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> probe -create -shm tb_interrupt_controller.uut.i_int tb_interrupt_controller.uut.i_intAck tb_interrupt_controller.uut.o_intId tb_interrupt_controller.uut.o_intReq
+Created probe 2
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Jul 01, 2026 at 02:26:22 KST  (total: 00:08:59)

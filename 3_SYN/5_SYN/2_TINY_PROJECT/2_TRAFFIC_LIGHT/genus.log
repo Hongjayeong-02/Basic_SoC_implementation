@@ -1,0 +1,92 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[14:13:59.158649] Configured Lic search path (22.01-s003): 5280@localhost
+
+Version: 22.17-s071_1, built Wed Sep 11 20:37:05 PDT 2024
+Options: -files 
+Date:    Thu Jul 09 14:13:59 2026
+Host:    kopo-seongnam (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (20cores*80cpus*2physical cpus*Intel(R) Xeon(R) Gold 5218R CPU @ 2.10GHz 28160KB) (394624392KB)
+PID:     126237
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+[14:13:59.234331] Periodic Lic check successful
+[14:13:59.234347] Feature usage summary:
+[14:13:59.234347] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Usage: genus [-abort_on_error] [-batch] [-del_scale 10] 
+          [-disable_user_startup] [-execute <string>]+ [-files <string>]+ [-help] 
+          [-legacy_gui] [-legacy_ui] [-lic_stack <integer>] [-lic_startup <string>] 
+          [-lic_startup_options <string>]+ [-log <string>] [-no_gui] [-overwrite] 
+          [-version] [-wait <integer>] 
+
+    [-abort_on_error]:
+        exit on script error
+    [-batch]:
+        exit after processing files
+    [-del_scale 10]:
+        for low frequency designs (below 5kHz)
+    [-disable_user_startup]:
+        only read master init file
+    [-execute <string>]+:
+        command string to execute before '-files' processing
+    [-files <string>]+:
+        execute command file
+    [-help]:
+        print this message
+    [-legacy_gui]:
+        start tool with legacy GUI
+    [-legacy_ui]:
+        start tool with legacy UI
+    [-lic_stack <integer>]:
+        specify number of licenses for VDI/VDI_XL (max is 2)
+    [-lic_startup <string>]:
+        specifies one of the following licenses
+            Genus_Synthesis
+            Virtuoso_Digital_Implem
+            Virtuoso_Digital_Implem_XL
+    [-lic_startup_options <string>]+:
+        checkout an option license at startup
+            Genus_Low_Power_Opt
+            Genus_Physical_Opt
+            Vdixl_Capacity_Opt
+    [-log <string>]:
+        prefix for the .log and .cmd files. If two args are given like
+        -log "a b" then the two names are used without any extenstion
+        added. If the .log file already exists, an integer is appended
+        to all the names to make the files unique.
+    [-no_gui]:
+        start with GUI disabled
+    [-overwrite]:
+        overwrite default logfiles
+    [-version]:
+        return program version information
+    [-wait <integer>]:
+        queue wait timeout in minutes
+
+
+Lic Summary:
+[14:14:12.474736] Cdslmd servers: kopo-seongnam
+[14:14:12.474744] Feature usage summary:
+[14:14:12.474745] Genus_Synthesis
+
+Abnormal exit.Abnormal exit.

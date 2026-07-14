@@ -1,0 +1,18 @@
+xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	22.03-s012: Started on Jul 07, 2026 at 02:23:58 KST
+xmvlog
+    -MESS
+    -linedebug
+    ./FSM.v
+    ./tb_FSM.v
+
+file: ./FSM.v
+		  ((state == RD1_TWICE) && (din_bit == 1)) ? 1 : 0;
+		                                                  |
+xmvlog: *E,EXPRPA (./FSM.v,53|52): expecting a right parenthesis (')') [4.3][9.7(IEEE)].
+	module work_lib.FSM
+		errors: 1, warnings: 0
+file: ./tb_FSM.v
+	module work_lib.tb_FSM
+		errors: 0, warnings: 0
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Jul 07, 2026 at 02:23:58 KST  (total: 00:00:00)

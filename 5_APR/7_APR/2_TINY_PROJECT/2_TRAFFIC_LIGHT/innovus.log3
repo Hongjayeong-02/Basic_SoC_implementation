@@ -1,0 +1,161 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v22.17-s086_1, built Tue Sep 24 10:51:50 PDT 2024
+Options:	-stylus 
+Date:		Thu Jul  9 14:50:47 2026
+Host:		kopo-seongnam (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (20cores*80cpus*Intel(R) Xeon(R) Gold 5218R CPU @ 2.10GHz 28160KB)
+OS:		CentOS Linux 7 (Core)
+
+License:
+		[14:50:47.158633] Configured Lic search path (22.01-s003): 5280@localhost
+
+		invs	Innovus Implementation System	22.1	Denied
+		invsb	Innovus Implementation System Basic	22.1	checkout succeeded
+		4 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /home/hah006/Basic_SoC_implementation/5_APR/7_APR/2_TINY_PROJECT/2_TRAFFIC_LIGHT/innovus_temp_132943_1d82d79b-5f8b-44c9-aa83-f52d7bfeb652_kopo-seongnam_hah006_y9tknc.
+
+Change the soft stacksize limit to 0.2%RAM (770 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> set_db init_power_nets VDD
+@innovus 2> set_db init_ground_nets VSS
+@innovus 3> #################################
+read_mmmc sample.view
+#################################
+#@ Begin verbose source sample.view (pre)
+@file 1:
+@@file 2: create_library_set -name max_timing\
+   -timing /home/hah006/Basic_SoC_implementation/5_APR/1_LIB/slow_vdd1v0_basicCells.lib
+@file 4:
+@@file 5: create_library_set -name min_timing\
+   -timing /home/hah006/Basic_SoC_implementation/5_APR/1_LIB/fast_vdd1v0_basicCells.lib
+@file 7:
+@@file 8: create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+@@file 10: create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+@file 12:
+@@file 13: create_rc_corner -name rccorners\
+   -cap_table ../../../4_CAP_TABLE/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech ../../../5_QRC_TECH/gpdk045.tch
+@file 23:
+@@file 24: create_delay_corner -name max_delay\
+   -timing_condition {default_mapping_tc_1}\
+   -rc_corner rccorners
+@@file 27: create_delay_corner -name min_delay\
+   -timing_condition {default_mapping_tc_2}\
+   -rc_corner rccorners
+@file 30:
+@@file 31: create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    /home/hah006/Basic_SoC_implementation/5_APR/2_CONSTRAINTS/2_TINY_PROJECT/2_TRAFFIC_LIGHT/traffic_ligh_final.sdc
+**ERROR: (TCLCMD-989):	cannot open SDC file '/home/hah006/Basic_SoC_implementation/5_APR/2_CONSTRAINTS/2_TINY_PROJECT/2_TRAFFIC_LIGHT/traffic_ligh_final.sdc' for mode 'sdc_cons'
+**ERROR: (IMPSE-110):	File 'sample.view' line 31: errors out.
+#@ End verbose source sample.view
+
+    while executing
+"create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    /home/hah006/Basic_SoC_implementation/5_APR/2_CONSTRAINTS/2_TINY_PROJECT/2_TRAFFIC_LIGHT/tra..."
+    (file "sample.view" line 31)
+    invoked from within
+"::se_source_orig sample.view"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    invoked from within
+"if { !$encrypted && !$no_encoding && $encodingName != ""  } {
+                  set st [uplevel [concat ::se_source_orig " -encoding " $encodingName "..."
+    invoked from within
+"if {[::SE::source_verbose_file_state $file_name] == 1} {
+              ::SE::source_verbose_start $file_name
+              if { !$encrypted && !$no_en..."
+    invoked from within
+"if {$useTclVerbose} {
+          # use tcl internal method
+          set st ""
+          if {[::SE::source_verbose_file_state $file_name] == 1} {
+     ..."
+    invoked from within
+"if {$largeFile == 1} {
+    if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+      $putCmd "Sourcing $file_name"
+    }
+    set st [uplevel [concat..."
+    (procedure "source" line 185)
+    invoked from within
+"source sample.view"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 {source sample.view}"
+**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc sample.view'.For more details, refer to error message from console.
+
+#################################
+read_physical -lef {../../../3_LEF/gsclib045_tech.lef ../../../3_LEF/gsclib045_macro.lef}
+#################################
+
+Loading LEF file ../../../3_LEF/gsclib045_tech.lef ...
+Set DBUPerIGU to M2 pitch 400.
+
+Loading LEF file ../../../3_LEF/gsclib045_macro.lef ...
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+#################################
+read_netlist traffic_light_netlist.v
+#################################
+#% Begin Load netlist data ... (date=07/09 14:52:06, mem=1371.8M)
+*** Begin netlist parsing (mem=1631.5M) ***
+Created 0 new cells from 0 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'traffic_light_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1635.453M, initial mem = 654.375M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1635.5M) ***
+#% End Load netlist data ... (date=07/09 14:52:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=1375.7M, current mem=1375.7M)
+Top level cell is traffic_light.
+Hooked 0 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell traffic_light ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+** info: there are 575 modules.
+** info: there are 19 stdCell insts.
+** info: there are 19 stdCell insts with at least one signal pin.
+
+*** Memory Usage v#1 (Current mem = 1686.879M, initial mem = 654.375M) ***
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Extraction setup Started 
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Thu Jul  9 14:53:07 2026
+  Total CPU time:     0:00:51
+  Total real time:    0:02:21
+  Peak memory (main): 1664.19MB
+
+
+*** Memory Usage v#1 (Current mem = 1942.199M, initial mem = 654.375M) ***
+*** Message Summary: 3 warning(s), 3 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:50.7, real=0:02:20, mem=1942.2M) ---

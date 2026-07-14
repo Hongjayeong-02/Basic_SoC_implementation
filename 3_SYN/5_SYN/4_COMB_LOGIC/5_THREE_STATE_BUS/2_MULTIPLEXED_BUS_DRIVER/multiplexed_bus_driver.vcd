@@ -1,0 +1,45 @@
+$date
+    Jul  1, 2026  23:30:44
+$end
+$version
+    TOOL:	xmsim(64)	22.03-s012
+$end
+$timescale
+    1 ps
+$end
+
+$scope module tb_multiplexed_bus_driver $end
+
+$scope module uut $end
+$var wire     32 !    i_dataA [31:0] $end
+$var wire     32 "    i_dataB [31:0] $end
+$var wire      1 #    i_enA  $end
+$var wire      1 $    i_enB  $end
+$var reg      32 %    o_busData [31:0] $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b10010001101000101011001111000 !
+b10101011110011011110111100010010 "
+0#
+0$
+bz %
+$end
+#10000
+1#
+b10010001101000101011001111000 %
+#20000
+1$
+0#
+b10101011110011011110111100010010 %
+#30000
+1#
+b10010001101000101011001111000 %
+#40000
+0$
+0#
+bz %
+#50000

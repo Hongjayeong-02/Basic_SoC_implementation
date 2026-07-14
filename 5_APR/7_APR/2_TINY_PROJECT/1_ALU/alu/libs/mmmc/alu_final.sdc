@@ -1,0 +1,1 @@
+/home/hah006/Basic_SoC_implementation/5_APR/2_CONSTRAINTS/2_TINY_PROJECT/1_ALU/alu_final.sdc

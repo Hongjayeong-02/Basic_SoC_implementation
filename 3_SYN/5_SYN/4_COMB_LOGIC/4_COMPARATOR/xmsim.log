@@ -1,0 +1,29 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Jul 01, 2026 at 19:56:48 KST
+xmsim
+    -gui
+    -MESS
+    tb_comparator
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_comparator.i_a tb_comparator.i_b tb_comparator.o_eq tb_comparator.o_gt tb_comparator.o_it
+Created probe 1
+xcelium> run
+Time=0 A=        10 B=        20 | GT=0 EQ= 0 LT=1
+Time=10000 A=        20 B=        10 | GT=1 EQ= 0 LT=0
+Time=20000 A=       100 B=       100 | GT=0 EQ= 1 LT=0
+Time=30000 A=         0 B=         0 | GT=0 EQ= 1 LT=0
+Time=40000 A=4294967295 B=         1 | GT=1 EQ= 0 LT=0
+Time=50000 A= 305419896 B= 305419897 | GT=0 EQ= 0 LT=1
+Time=60000 A=2271560481 B= 305419896 | GT=1 EQ= 0 LT=0
+Simulation complete via $finish(1) at time 70 NS + 0
+./tb_comparator.v:40 	$finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Jul 01, 2026 at 19:58:04 KST  (total: 00:01:16)

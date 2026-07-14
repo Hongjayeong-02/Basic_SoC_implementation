@@ -1,0 +1,1 @@
+rm -rf innovus* *.log *.rpt *.bin timingReports *.spef .cadence

@@ -1,0 +1,28 @@
+xmelab(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmelab(64)	22.03-s012: Started on Jul 09, 2026 at 09:18:55 KST
+xmelab
+    -MESS
+    -access rwc
+    tb_traffic_light
+
+	Elaborating the design hierarchy:
+		Caching library 'work_lib' ....... Done
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		work_lib.traffic_light:module <0x76f805d0>
+			streams:  15, words:  7220
+		work_lib.tb_traffic_light:module <0x4ff37fcf>
+			streams:   5, words:  3589
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               7       7
+		Scalar wires:            5       -
+		Always blocks:           3       3
+		Initial blocks:          2       2
+		Pseudo assignments:      2       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: work_lib.tb_traffic_light:module
+TOOL:	xmelab(64)	22.03-s012: Exiting on Jul 09, 2026 at 09:18:56 KST  (total: 00:00:01)

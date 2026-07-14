@@ -1,0 +1,75 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[00:27:42.163193] Configured Lic search path (22.01-s003): 5280@172.31.52.241
+
+Version: 22.17-s071_1, built Wed Sep 11 20:37:05 PDT 2024
+Options: -files my_syn.tcl 
+Date:    Thu Jul 09 00:27:42 2026
+Host:    kopo-seongnam (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (20cores*80cpus*2physical cpus*Intel(R) Xeon(R) Gold 5218R CPU @ 2.10GHz 28160KB) (394624392KB)
+PID:     239860
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+[00:27:42.285160] Periodic Lic check successful
+[00:27:42.285177] Feature usage summary:
+[00:27:42.285178] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source my_syn.tcl
+#@ Begin verbose source ./my_syn.tcl
+@file(my_syn.tcl) 1: set_db init_lib_search_path /home/hah006/Basic_SoC_implementation/3_SYN/1_LIB 
+  Setting attribute of root '/': 'init_lib_search_path' = /home/hah006/Basic_SoC_implementation/3_SYN/1_LIB
+@file(my_syn.tcl) 2: set_db init_hdl_search_path /home/hah006/Basic_SoC_implementation/1_RTL/4_COMB_LOGIC/1_MUX
+  Setting attribute of root '/': 'init_hdl_search_path' = /home/hah006/Basic_SoC_implementation/1_RTL/4_COMB_LOGIC/1_MUX
+@file(my_syn.tcl) 4: read_libs /home/hah006/Basic_SoC_implementation/3_SYN/1_LIB/slow_vdd1v0_basicCells.lib
+
+  Message Summary for Library slow_vdd1v0_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+@file(my_syn.tcl) 6: read_hdl /home/hah006/Basic_SoC_implemantation/1_RTL/4_COMB_LOGIC/1_MUX/gpio_mux.v
+Warning : Cannot open file. [VLOGPT-650]
+        : File '/home/hah006/Basic_SoC_implemantation/1_RTL/4_COMB_LOGIC/1_MUX/gpio_mux.v'.
+        : The specified file could not be opened.  Check the value of the init_hdl_search_path attribute.
+@file(my_syn.tcl) 8: elaborate
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(my_syn.tcl) 10: read_sdc /home/hah006/Basic_SoC_implemantation/3_SYN/2_CONSTRAINTS/sample.sdc
+#@ End verbose source ./my_syn.tcl
+Design not exist for read_sdc
+Encountered problems processing file: my_syn.tcl
+WARNING: This version of the tool is 664 days old.
+@genus:root: 2> gui_raise
+@genus:root: 3> exit
+
+Lic Summary:
+[00:28:14.261650] Cdslmd servers: kopo-seongnam
+[00:28:14.261659] Feature usage summary:
+[00:28:14.261664] Genus_Synthesis
+
+Normal exit.

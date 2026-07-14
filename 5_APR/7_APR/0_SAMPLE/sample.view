@@ -1,0 +1,40 @@
+
+create_library_set -name max_timing\
+   -timing /home/hah006/Basic_SoC_implementation/5_APR/1_LIB/slow_vdd1v0_basicCells.lib
+
+create_library_set -name min_timing\
+   -timing /home/hah006/Basic_SoC_implementation/5_APR/1_LIB/fast_vdd1v0_basicCells.lib
+
+create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+
+create_rc_corner -name rccorners\
+   -cap_table ../../../4_CAP_TABLE/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech ../../../5_QRC_TECH/gpdk045.tch
+
+create_delay_corner -name max_delay\
+   -timing_condition {default_mapping_tc_1}\
+   -rc_corner rccorners
+create_delay_corner -name min_delay\
+   -timing_condition {default_mapping_tc_2}\
+   -rc_corner rccorners
+
+create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    /home/hah006/Basic_SoC_implementation/5_APR/2_CONSTRAINTS/2_TINY_PROJECT/2_TRAFFIC_LIGHT/traffic_light__final.sdc
+
+create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+
+set_analysis_view -setup wc -hold bc
+
+

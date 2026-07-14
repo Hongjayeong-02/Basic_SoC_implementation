@@ -1,0 +1,5 @@
+rm -rf 	./fv *.cmd *.log \
+		./reports/*.rpt  \
+		./outputs/*		 \
+		./genus.*		 \
+		./.*.tstamp

@@ -1,0 +1,15 @@
+xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	22.03-s012: Started on Jul 09, 2026 at 09:18:55 KST
+xmvlog
+    -MESS
+    -linedebug
+    ./tb_traffic_light.v
+    ./traffic_light.v
+
+file: ./tb_traffic_light.v
+	module work_lib.tb_traffic_light
+		errors: 0, warnings: 0
+file: ./traffic_light.v
+	module work_lib.traffic_light
+		errors: 0, warnings: 0
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Jul 09, 2026 at 09:18:55 KST  (total: 00:00:00)
