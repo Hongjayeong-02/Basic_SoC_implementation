@@ -1,0 +1,22 @@
+# Simulation
+*.vcd
+*.log
+*.key
+*.dsn
+*.trn
+*.shm
+waves.shm/
+work.lib/
+xcelium.d/
+*.simvision
+
+# Cadence
+.cadence/
+
+# Genus
+genus.cmd*
+genus.log*
+*.tstamp
+
+# Temporary
+*~
