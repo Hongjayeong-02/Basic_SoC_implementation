@@ -1,0 +1,35 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Aug 12, 2026 at 08:23:13 KST
+xmsim
+    -gui
+    -MESS
+    tb_pwm
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_pwm.i_clk tb_pwm.i_duty tb_pwm.i_rst_n tb_pwm.o_pwm
+Created probe 1
+xcelium> run
+TIME = 0 | DUTY =   0 | PWM = 0
+TIME = 20000 | DUTY =  64 | PWM = 1
+TIME = 645000 | DUTY =  64 | PWM = 0
+TIME = 2565000 | DUTY =  64 | PWM = 1
+TIME = 2580000 | DUTY = 128 | PWM = 1
+TIME = 3845000 | DUTY = 128 | PWM = 0
+TIME = 5125000 | DUTY = 128 | PWM = 1
+TIME = 5140000 | DUTY = 192 | PWM = 1
+TIME = 7045000 | DUTY = 192 | PWM = 0
+TIME = 7685000 | DUTY = 192 | PWM = 1
+TIME = 7700000 | DUTY = 255 | PWM = 1
+TIME = 10235000 | DUTY = 255 | PWM = 0
+TIME = 10245000 | DUTY = 255 | PWM = 1
+Simulation complete via $finish(1) at time 10260 NS + 0
+./tb_pwm.v:45 	#2560 $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Aug 12, 2026 at 08:24:07 KST  (total: 00:00:54)

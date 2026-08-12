@@ -1,0 +1,29 @@
+xmelab(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmelab(64)	22.03-s012: Started on Aug 12, 2026 at 02:57:15 KST
+xmelab
+    -MESS
+    -access rwc
+    tb_ring_counter
+
+	Elaborating the design hierarchy:
+		Caching library 'work_lib' ....... Done
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		work_lib.ring_counter:module <0x5256fea9>
+			streams:   3, words:  1035
+		work_lib.tb_ring_counter:module <0x2b52aa85>
+			streams:   7, words:  6554
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               3       3
+		Scalar wires:            2       -
+		Vectored wires:          1       -
+		Always blocks:           2       2
+		Initial blocks:          3       3
+		Pseudo assignments:      2       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: work_lib.tb_ring_counter:module
+TOOL:	xmelab(64)	22.03-s012: Exiting on Aug 12, 2026 at 02:57:16 KST  (total: 00:00:01)

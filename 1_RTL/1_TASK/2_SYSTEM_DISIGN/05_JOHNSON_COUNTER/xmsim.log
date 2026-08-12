@@ -1,0 +1,94 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Aug 12, 2026 at 03:05:26 KST
+xmsim
+    -gui
+    -MESS
+    tb_johnson_counter
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_johnson_counter.i_clk tb_johnson_counter.i_rst_n tb_johnson_counter.o_count
+Created probe 1
+xcelium> run
+TIME = 0 | CLK = 0 | RST_N = 0 | COUNT = 00000000
+TIME = 5000 | CLK = 1 | RST_N = 0 | COUNT = 00000000
+TIME = 10000 | CLK = 0 | RST_N = 1 | COUNT = 00000000
+TIME = 15000 | CLK = 1 | RST_N = 1 | COUNT = 80000000
+TIME = 20000 | CLK = 0 | RST_N = 1 | COUNT = 80000000
+TIME = 25000 | CLK = 1 | RST_N = 1 | COUNT = 40000000
+TIME = 30000 | CLK = 0 | RST_N = 1 | COUNT = 40000000
+TIME = 35000 | CLK = 1 | RST_N = 1 | COUNT = a0000000
+TIME = 40000 | CLK = 0 | RST_N = 1 | COUNT = a0000000
+TIME = 45000 | CLK = 1 | RST_N = 1 | COUNT = 50000000
+TIME = 50000 | CLK = 0 | RST_N = 1 | COUNT = 50000000
+TIME = 55000 | CLK = 1 | RST_N = 1 | COUNT = a8000000
+TIME = 60000 | CLK = 0 | RST_N = 1 | COUNT = a8000000
+TIME = 65000 | CLK = 1 | RST_N = 1 | COUNT = 54000000
+TIME = 70000 | CLK = 0 | RST_N = 1 | COUNT = 54000000
+TIME = 75000 | CLK = 1 | RST_N = 1 | COUNT = aa000000
+TIME = 80000 | CLK = 0 | RST_N = 1 | COUNT = aa000000
+TIME = 85000 | CLK = 1 | RST_N = 1 | COUNT = 55000000
+TIME = 90000 | CLK = 0 | RST_N = 1 | COUNT = 55000000
+TIME = 95000 | CLK = 1 | RST_N = 1 | COUNT = aa800000
+TIME = 100000 | CLK = 0 | RST_N = 1 | COUNT = aa800000
+TIME = 105000 | CLK = 1 | RST_N = 1 | COUNT = 55400000
+TIME = 110000 | CLK = 0 | RST_N = 1 | COUNT = 55400000
+TIME = 115000 | CLK = 1 | RST_N = 1 | COUNT = aaa00000
+TIME = 120000 | CLK = 0 | RST_N = 1 | COUNT = aaa00000
+TIME = 125000 | CLK = 1 | RST_N = 1 | COUNT = 55500000
+TIME = 130000 | CLK = 0 | RST_N = 1 | COUNT = 55500000
+TIME = 135000 | CLK = 1 | RST_N = 1 | COUNT = aaa80000
+TIME = 140000 | CLK = 0 | RST_N = 1 | COUNT = aaa80000
+TIME = 145000 | CLK = 1 | RST_N = 1 | COUNT = 55540000
+TIME = 150000 | CLK = 0 | RST_N = 1 | COUNT = 55540000
+TIME = 155000 | CLK = 1 | RST_N = 1 | COUNT = aaaa0000
+TIME = 160000 | CLK = 0 | RST_N = 1 | COUNT = aaaa0000
+TIME = 165000 | CLK = 1 | RST_N = 1 | COUNT = 55550000
+TIME = 170000 | CLK = 0 | RST_N = 1 | COUNT = 55550000
+TIME = 175000 | CLK = 1 | RST_N = 1 | COUNT = aaaa8000
+TIME = 180000 | CLK = 0 | RST_N = 1 | COUNT = aaaa8000
+TIME = 185000 | CLK = 1 | RST_N = 1 | COUNT = 55554000
+TIME = 190000 | CLK = 0 | RST_N = 1 | COUNT = 55554000
+TIME = 195000 | CLK = 1 | RST_N = 1 | COUNT = aaaaa000
+TIME = 200000 | CLK = 0 | RST_N = 1 | COUNT = aaaaa000
+TIME = 205000 | CLK = 1 | RST_N = 1 | COUNT = 55555000
+TIME = 210000 | CLK = 0 | RST_N = 1 | COUNT = 55555000
+TIME = 215000 | CLK = 1 | RST_N = 1 | COUNT = aaaaa800
+TIME = 220000 | CLK = 0 | RST_N = 1 | COUNT = aaaaa800
+TIME = 225000 | CLK = 1 | RST_N = 1 | COUNT = 55555400
+TIME = 230000 | CLK = 0 | RST_N = 1 | COUNT = 55555400
+TIME = 235000 | CLK = 1 | RST_N = 1 | COUNT = aaaaaa00
+TIME = 240000 | CLK = 0 | RST_N = 1 | COUNT = aaaaaa00
+TIME = 245000 | CLK = 1 | RST_N = 1 | COUNT = 55555500
+TIME = 250000 | CLK = 0 | RST_N = 1 | COUNT = 55555500
+TIME = 255000 | CLK = 1 | RST_N = 1 | COUNT = aaaaaa80
+TIME = 260000 | CLK = 0 | RST_N = 1 | COUNT = aaaaaa80
+TIME = 265000 | CLK = 1 | RST_N = 1 | COUNT = 55555540
+TIME = 270000 | CLK = 0 | RST_N = 1 | COUNT = 55555540
+TIME = 275000 | CLK = 1 | RST_N = 1 | COUNT = aaaaaaa0
+TIME = 280000 | CLK = 0 | RST_N = 1 | COUNT = aaaaaaa0
+TIME = 285000 | CLK = 1 | RST_N = 1 | COUNT = 55555550
+TIME = 290000 | CLK = 0 | RST_N = 1 | COUNT = 55555550
+TIME = 295000 | CLK = 1 | RST_N = 1 | COUNT = aaaaaaa8
+TIME = 300000 | CLK = 0 | RST_N = 1 | COUNT = aaaaaaa8
+TIME = 305000 | CLK = 1 | RST_N = 1 | COUNT = 55555554
+TIME = 310000 | CLK = 0 | RST_N = 1 | COUNT = 55555554
+TIME = 315000 | CLK = 1 | RST_N = 1 | COUNT = aaaaaaaa
+TIME = 320000 | CLK = 0 | RST_N = 1 | COUNT = aaaaaaaa
+TIME = 325000 | CLK = 1 | RST_N = 1 | COUNT = 55555555
+TIME = 330000 | CLK = 0 | RST_N = 1 | COUNT = 55555555
+TIME = 335000 | CLK = 1 | RST_N = 1 | COUNT = aaaaaaaa
+TIME = 340000 | CLK = 0 | RST_N = 1 | COUNT = aaaaaaaa
+TIME = 345000 | CLK = 1 | RST_N = 1 | COUNT = 55555555
+TIME = 350000 | CLK = 0 | RST_N = 1 | COUNT = 55555555
+TIME = 355000 | CLK = 1 | RST_N = 1 | COUNT = aaaaaaaa
+Simulation complete via $finish(1) at time 360 NS + 0
+./tb_johnson_counter.v:23 	#350 $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Aug 12, 2026 at 03:22:46 KST  (total: 00:17:20)

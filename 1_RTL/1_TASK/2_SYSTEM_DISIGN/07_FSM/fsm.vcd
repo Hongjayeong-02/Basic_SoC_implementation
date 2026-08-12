@@ -1,0 +1,177 @@
+$date
+    Aug 12, 2026  06:21:47
+$end
+$version
+    TOOL:	xmsim(64)	22.03-s012
+$end
+$timescale
+    1 ps
+$end
+
+$scope module tb_fsm $end
+$var reg       1 !    i_clk $end
+$var reg       1 "    i_rst_n $end
+$var reg       1 #    i_din $end
+$var wire      1 $    o_dout  $end
+
+$scope module u_fsm $end
+$var wire      1 %    i_clk  $end
+$var wire      1 &    i_rst_n  $end
+$var wire      1 '    i_din  $end
+$var wire      1 $    o_dout  $end
+$var reg       2 (    state [1:0] $end
+$var reg       2 )    next_state [1:0] $end
+$var parameter  2 *    S0 $end
+$var parameter  2 +    S1 $end
+$var parameter  2 ,    S2 $end
+$var parameter  2 -    S3 $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b11 -
+b10 ,
+b1 +
+b0 *
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+b0 (
+b0 )
+$end
+#5000
+1!
+1%
+#10000
+1"
+0!
+0%
+1&
+#15000
+1!
+1%
+#20000
+0!
+0%
+#25000
+1!
+1%
+#30000
+0!
+0%
+#35000
+1!
+1%
+#40000
+0!
+0%
+#45000
+1!
+1%
+#50000
+1#
+0!
+0%
+1'
+b1 )
+#55000
+1!
+1%
+b1 (
+b10 )
+#60000
+0!
+0%
+#65000
+1!
+1%
+b10 (
+b11 )
+#70000
+0!
+0%
+#75000
+1!
+1%
+b11 (
+1$
+#80000
+0#
+0!
+0%
+0'
+b0 )
+#85000
+1!
+1%
+b0 (
+0$
+#90000
+0!
+0%
+#95000
+1!
+1%
+#100000
+1#
+0!
+0%
+1'
+b1 )
+#105000
+1!
+1%
+b1 (
+b10 )
+#110000
+0!
+0%
+#115000
+1!
+1%
+b10 (
+b11 )
+#120000
+0!
+0%
+#125000
+1!
+1%
+b11 (
+1$
+#130000
+0"
+0!
+0%
+0&
+b0 (
+b1 )
+0$
+#135000
+1!
+1%
+#140000
+0!
+0%
+#145000
+1!
+1%
+#150000
+0!
+0%
+#155000
+1!
+1%
+#160000
+0!
+0%
+#165000
+1!
+1%
+#170000

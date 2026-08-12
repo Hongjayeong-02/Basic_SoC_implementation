@@ -1,0 +1,165 @@
+$date
+    Aug 12, 2026  06:44:18
+$end
+$version
+    TOOL:	xmsim(64)	22.03-s012
+$end
+$timescale
+    1 ps
+$end
+
+$scope module tb_sequence_detector $end
+$var reg       1 !    i_clk $end
+$var reg       1 "    i_rst_n $end
+$var reg       1 #    i_din $end
+$var wire      1 $    o_detect  $end
+
+$scope module u_sequence_detector $end
+$var wire      1 %    i_clk  $end
+$var wire      1 &    i_rst_n  $end
+$var wire      1 '    i_din  $end
+$var wire      1 $    o_detect  $end
+$var reg       2 (    state [1:0] $end
+$var reg       2 )    next_state [1:0] $end
+$var parameter  2 *    S0 $end
+$var parameter  2 +    S1 $end
+$var parameter  2 ,    S2 $end
+$var parameter  2 -    S3 $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b11 -
+b10 ,
+b1 +
+b0 *
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+b0 (
+b0 )
+$end
+#5000
+1!
+1%
+#10000
+1"
+0!
+0%
+1&
+#15000
+1!
+1%
+#20000
+1#
+0!
+0%
+1'
+b1 )
+#25000
+1!
+1%
+b1 (
+#30000
+0#
+0!
+0%
+0'
+b10 )
+#35000
+1!
+1%
+b10 (
+b0 )
+#40000
+1#
+0!
+0%
+1'
+b11 )
+#45000
+1!
+1%
+b11 (
+b1 )
+1$
+#50000
+0!
+0%
+#55000
+1!
+1%
+b1 (
+0$
+#60000
+0#
+0!
+0%
+0'
+b10 )
+#65000
+1!
+1%
+b10 (
+b0 )
+#70000
+0!
+0%
+#75000
+1!
+1%
+b0 (
+#80000
+0!
+0%
+#85000
+1!
+1%
+#90000
+1#
+0!
+0%
+1'
+b1 )
+#95000
+1!
+1%
+b1 (
+#100000
+0#
+0!
+0%
+0'
+b10 )
+#105000
+1!
+1%
+b10 (
+b0 )
+#110000
+1#
+0!
+0%
+1'
+b11 )
+#115000
+1!
+1%
+b11 (
+b1 )
+1$
+#120000
+0!
+0%
+#125000
+1!
+1%
+b1 (
+0$
+#130000

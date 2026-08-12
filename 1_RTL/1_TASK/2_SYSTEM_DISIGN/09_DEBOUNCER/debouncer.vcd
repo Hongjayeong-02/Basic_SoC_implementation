@@ -1,0 +1,114 @@
+$date
+    Aug 12, 2026  07:07:01
+$end
+$version
+    TOOL:	xmsim(64)	22.03-s012
+$end
+$timescale
+    1 ps
+$end
+
+$scope module tb_debouncer $end
+$var reg       1 !    i_clk $end
+$var reg       1 "    i_rst_n $end
+$var reg       1 #    i_btn $end
+$var wire      1 $    o_btn  $end
+
+$scope module u_debouncer $end
+$var wire      1 %    i_clk  $end
+$var wire      1 &    i_rst_n  $end
+$var wire      1 '    i_btn  $end
+$var wire      1 $    o_btn  $end
+$var reg       1 (    btn_ff1 $end
+$var reg       1 )    btn_ff2 $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+$end
+#5000
+1!
+1%
+#10000
+1"
+0!
+0%
+1&
+#15000
+1!
+1%
+#20000
+1#
+0!
+0%
+1'
+#25000
+1!
+1%
+1(
+#30000
+0!
+0%
+#35000
+1!
+1%
+1)
+1$
+#40000
+0!
+0%
+#45000
+1!
+1%
+#50000
+0#
+0!
+0%
+0'
+#55000
+1!
+1%
+0(
+#60000
+0!
+0%
+#65000
+1!
+1%
+0)
+0$
+#70000
+1#
+0!
+0%
+1'
+#75000
+1!
+1%
+1(
+#80000
+0!
+0%
+#85000
+1!
+1%
+1)
+1$
+#90000
+0!
+0%
+#95000
+1!
+1%
+#100000

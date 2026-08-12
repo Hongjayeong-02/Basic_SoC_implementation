@@ -1,0 +1,34 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Aug 12, 2026 at 06:43:49 KST
+xmsim
+    -gui
+    -MESS
+    tb_sequence_detector
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_sequence_detector.i_clk tb_sequence_detector.i_din tb_sequence_detector.i_rst_n tb_sequence_detector.o_detect
+Created probe 1
+xcelium> run
+TIME = 0 | DIN = 0 | DETECT = 0
+TIME = 20000 | DIN = 1 | DETECT = 0
+TIME = 30000 | DIN = 0 | DETECT = 0
+TIME = 40000 | DIN = 1 | DETECT = 0
+TIME = 45000 | DIN = 1 | DETECT = 1
+TIME = 55000 | DIN = 1 | DETECT = 0
+TIME = 60000 | DIN = 0 | DETECT = 0
+TIME = 90000 | DIN = 1 | DETECT = 0
+TIME = 100000 | DIN = 0 | DETECT = 0
+TIME = 110000 | DIN = 1 | DETECT = 0
+TIME = 115000 | DIN = 1 | DETECT = 1
+TIME = 125000 | DIN = 1 | DETECT = 0
+Simulation complete via $finish(1) at time 130 NS + 0
+./tb_sequence_detector.v:46 	#10 $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Aug 12, 2026 at 06:44:36 KST  (total: 00:00:47)

@@ -1,0 +1,29 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Aug 11, 2026 at 01:05:52 KST
+xmsim
+    -gui
+    -MESS
+    tb_ripple_carry_adder
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_ripple_carry_adder.i_a tb_ripple_carry_adder.i_b tb_ripple_carry_adder.i_cin tb_ripple_carry_adder.o_cout tb_ripple_carry_adder.o_sum
+Created probe 1
+xcelium> run
+Time = 0 | A = 00000000 | B = 00000000 | CIN = 0 | SUM = 00000000 | COUT = 0
+Time = 10000 | A = 00000001 | B = 00000001 | CIN = 0 | SUM = 00000002 | COUT = 0
+Time = 20000 | A = 12345678 | B = 87654321 | CIN = 0 | SUM = 99999999 | COUT = 0
+Time = 30000 | A = ffffffff | B = 00000001 | CIN = 1 | SUM = 00000001 | COUT = 1
+Time = 40000 | A = ffffffff | B = ffffffff | CIN = 0 | SUM = fffffffe | COUT = 1
+Time = 50000 | A = ffffffff | B = ffffffff | CIN = 1 | SUM = ffffffff | COUT = 1
+Time = 60000 | A = aaaaaaaa | B = 55555555 | CIN = 0 | SUM = ffffffff | COUT = 0
+Simulation complete via $finish(1) at time 70 NS + 0
+./tb_ripple_carry_adder.v:69 	$finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Aug 11, 2026 at 01:15:41 KST  (total: 00:09:49)

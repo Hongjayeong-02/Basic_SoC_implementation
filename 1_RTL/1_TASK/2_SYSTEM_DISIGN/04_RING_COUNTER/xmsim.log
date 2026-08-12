@@ -1,0 +1,64 @@
+xmsim(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmsim(64)	22.03-s012: Started on Aug 12, 2026 at 02:57:16 KST
+xmsim
+    -gui
+    -MESS
+    tb_ring_counter
+
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_ring_counter.i_clk tb_ring_counter.i_rst_n tb_ring_counter.o_count
+Created probe 1
+xcelium> run
+TIME = 0 | CLK = 0 | RST_N = 0 | COUNT = 00000001
+TIME = 5000 | CLK = 1 | RST_N = 0 | COUNT = 00000001
+TIME = 10000 | CLK = 0 | RST_N = 1 | COUNT = 00000001
+TIME = 15000 | CLK = 1 | RST_N = 1 | COUNT = 00000002
+TIME = 20000 | CLK = 0 | RST_N = 1 | COUNT = 00000002
+TIME = 25000 | CLK = 1 | RST_N = 1 | COUNT = 00000004
+TIME = 30000 | CLK = 0 | RST_N = 1 | COUNT = 00000004
+TIME = 35000 | CLK = 1 | RST_N = 1 | COUNT = 00000008
+TIME = 40000 | CLK = 0 | RST_N = 1 | COUNT = 00000008
+TIME = 45000 | CLK = 1 | RST_N = 1 | COUNT = 00000010
+TIME = 50000 | CLK = 0 | RST_N = 1 | COUNT = 00000010
+TIME = 55000 | CLK = 1 | RST_N = 1 | COUNT = 00000020
+TIME = 60000 | CLK = 0 | RST_N = 1 | COUNT = 00000020
+TIME = 65000 | CLK = 1 | RST_N = 1 | COUNT = 00000040
+TIME = 70000 | CLK = 0 | RST_N = 1 | COUNT = 00000040
+TIME = 75000 | CLK = 1 | RST_N = 1 | COUNT = 00000080
+TIME = 80000 | CLK = 0 | RST_N = 1 | COUNT = 00000080
+TIME = 85000 | CLK = 1 | RST_N = 1 | COUNT = 00000100
+TIME = 90000 | CLK = 0 | RST_N = 1 | COUNT = 00000100
+TIME = 95000 | CLK = 1 | RST_N = 1 | COUNT = 00000200
+TIME = 100000 | CLK = 0 | RST_N = 1 | COUNT = 00000200
+TIME = 105000 | CLK = 1 | RST_N = 1 | COUNT = 00000400
+TIME = 110000 | CLK = 0 | RST_N = 1 | COUNT = 00000400
+TIME = 115000 | CLK = 1 | RST_N = 1 | COUNT = 00000800
+TIME = 120000 | CLK = 0 | RST_N = 1 | COUNT = 00000800
+TIME = 125000 | CLK = 1 | RST_N = 1 | COUNT = 00001000
+TIME = 130000 | CLK = 0 | RST_N = 1 | COUNT = 00001000
+TIME = 135000 | CLK = 1 | RST_N = 1 | COUNT = 00002000
+TIME = 140000 | CLK = 0 | RST_N = 1 | COUNT = 00002000
+TIME = 145000 | CLK = 1 | RST_N = 1 | COUNT = 00004000
+TIME = 150000 | CLK = 0 | RST_N = 1 | COUNT = 00004000
+TIME = 155000 | CLK = 1 | RST_N = 1 | COUNT = 00008000
+TIME = 160000 | CLK = 0 | RST_N = 1 | COUNT = 00008000
+TIME = 165000 | CLK = 1 | RST_N = 1 | COUNT = 00010000
+TIME = 170000 | CLK = 0 | RST_N = 1 | COUNT = 00010000
+TIME = 175000 | CLK = 1 | RST_N = 1 | COUNT = 00020000
+TIME = 180000 | CLK = 0 | RST_N = 1 | COUNT = 00020000
+TIME = 185000 | CLK = 1 | RST_N = 1 | COUNT = 00040000
+TIME = 190000 | CLK = 0 | RST_N = 1 | COUNT = 00040000
+TIME = 195000 | CLK = 1 | RST_N = 1 | COUNT = 00080000
+TIME = 200000 | CLK = 0 | RST_N = 1 | COUNT = 00080000
+TIME = 205000 | CLK = 1 | RST_N = 1 | COUNT = 00100000
+Simulation complete via $finish(1) at time 210 NS + 0
+./tb_ring_counter.v:25 	$finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xmsim(64)	22.03-s012: Exiting on Aug 12, 2026 at 02:58:25 KST  (total: 00:01:09)

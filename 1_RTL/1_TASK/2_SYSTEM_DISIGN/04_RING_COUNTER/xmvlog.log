@@ -1,0 +1,15 @@
+xmvlog(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmvlog(64)	22.03-s012: Started on Aug 12, 2026 at 02:57:15 KST
+xmvlog
+    -MESS
+    -linedebug
+    ./ring_counter.v
+    ./tb_ring_counter.v
+
+file: ./ring_counter.v
+	module work_lib.ring_counter
+		errors: 0, warnings: 0
+file: ./tb_ring_counter.v
+	module work_lib.tb_ring_counter
+		errors: 0, warnings: 0
+TOOL:	xmvlog(64)	22.03-s012: Exiting on Aug 12, 2026 at 02:57:15 KST  (total: 00:00:00)

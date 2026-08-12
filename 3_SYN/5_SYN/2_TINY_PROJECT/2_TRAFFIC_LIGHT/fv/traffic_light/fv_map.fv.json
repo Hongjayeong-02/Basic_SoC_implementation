@@ -251,20 +251,20 @@
 "object":"/designs/traffic_light/instances_seq/r_cnt_reg[0]",
 "type":"instance"},
 {"index": "1", 
- "date": "Thu Jul 09 09:26:57 UTC 2026",
- "seconds": 1783589217.422324,
+ "date": "Tue Jul 14 14:46:46 UTC 2026",
+ "seconds": 1784040406.068208,
  "netlist": "fv/traffic_light/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/home/hah006/Basic_SoC_implementation/3_SYN/5_SYN/2_TINY_PROJECT/2_TRAFFIC_LIGHT/fv/traffic_light/fv_map.v.gz", 
- "netlist_mtime": "1783589215", 
- "netlist_timestamp": "Thu Jul 09 09:26:55 UTC 2026", 
+ "netlist_mtime": "1784040404", 
+ "netlist_timestamp": "Tue Jul 14 14:46:44 UTC 2026", 
  "netlist_size": "641", 
- "netlist_cksum": "420021164", 
+ "netlist_cksum": "422045584", 
  "design_name": "traffic_light", 
  "synth_workdir": "/home/hah006/Basic_SoC_implementation/3_SYN/5_SYN/2_TINY_PROJECT/2_TRAFFIC_LIGHT", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 1.4942689999999998 
+ "write_verif_file_runtime": 1.351011 
  }
 ]
