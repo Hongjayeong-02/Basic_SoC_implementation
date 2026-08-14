@@ -5,6 +5,7 @@
 *.dsn
 *.trn
 *.shm
+*.diag
 waves.shm/
 work.lib/
 xcelium.d/
