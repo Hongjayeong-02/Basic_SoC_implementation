@@ -1,32 +1,31 @@
 <div align="center">
 
-# 🧩 Basic_SoC_implementation
+# Basic_SoC_implementation
 
-### From basic SoC building blocks to a full RTL-to-GDSII flow — a hands-on digital IC design portfolio
+### RTL design, functional verification, synthesis, equivalence checking, and APR
 
-![Verilog](https://img.shields.io/badge/HDL-Verilog-4C51E4?style=flat-square)
-![Platform](https://img.shields.io/badge/Platform-Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Flow](https://img.shields.io/badge/Flow-RTL--to--GDSII-6E56CF?style=flat-square)
-![License](https://img.shields.io/badge/License-GPL--3.0-green?style=flat-square)
+![Verilog](https://img.shields.io/badge/HDL-Verilog-6B7280?style=flat-square)
+![Platform](https://img.shields.io/badge/Platform-Linux-6B7280?style=flat-square)
+![Flow](https://img.shields.io/badge/Flow-RTL--to--GDSII-6B7280?style=flat-square)
+![License](https://img.shields.io/badge/License-GPL--3.0-6B7280?style=flat-square)
 
 </div>
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 
-- [About](#-about)
-- [Project Structure](#️-project-structure)
-- [Design Flow](#-design-flow)
-- [Repository Layout](#-repository-layout)
-- [Tech Stack & Conventions](#️-tech-stack--conventions)
-- [Roadmap](#️-roadmap)
-- [Results](#️-results)
-- [Contact](#-contact)
+- [About](#about)
+- [Project Structure](#project-structure)
+- [Design Flow](#design-flow)
+- [Repository Layout](#repository-layout)
+- [Tech Stack & Conventions](#tech-stack--conventions)
+- [Roadmap](#roadmap)
+- [Contact](#contact)
 
 ---
 
-## 🧑‍💻 About
+## About
 
 This project explores the fundamental building blocks of an SoC and implements them end-to-end, following the RTL-to-GDSII flow from logic design to physical implementation.
 
@@ -36,20 +35,22 @@ This project explores the fundamental building blocks of an SoC and implements t
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
+
+*What each stage of the flow does — see [Repository Layout](#repository-layout) for where it lives.*
 
 | Stage | Description |
 |:--:|:--|
-| 1️⃣ Background             | Industry/design background, Linux & CLI environment setup |
-| 2️⃣ SoC Component Modeling | RTL design of basic blocks — combinational, sequential, FSM |
-| 3️⃣ Simulation             | Testbench-based functional verification |
-| 4️⃣ Synthesis              | RTL → gate-level synthesis |
-| 5️⃣ Equivalence Check      | Logical equivalence between RTL and netlist |
-| 6️⃣ APR                    | Place & Route to generate GDSII |
+| 0 | Documentation & environment setup |
+| 1 | RTL design |
+| 2 | Functional simulation |
+| 3 | Synthesis |
+| 4 | Equivalence check |
+| 5 | APR |
 
 ---
 
-## 🔁 Design Flow
+## Design Flow
 
 ```mermaid
 flowchart LR
@@ -58,18 +59,31 @@ flowchart LR
     C --> D["4_EC\nEquivalence Check"]
     D --> E["5_APR\nPlace & Route"]
     E --> F(["GDSII"])
-
-    style A fill:#4C51E4,color:#fff
-    style B fill:#6E56CF,color:#fff
-    style C fill:#7C6FE8,color:#fff
-    style D fill:#8A7CF0,color:#fff
-    style E fill:#9C8FF5,color:#fff
-    style F fill:#111,color:#fff
 ```
 
 ---
 
-## 📁 Repository Layout
+
+**Verification**
+
+- Cadence Xcelium
+- SimVision
+- RTL simulation
+- UART functional verification
+
+**Environment**
+
+- Verilog HDL
+- Cadence Xcelium
+- SimVision
+- Linux
+- Git / GitHub
+
+---
+
+## Repository Layout
+
+*Where each stage's files live — see [Project Structure](#project-structure) for what each stage does.*
 
 ```bash
 Basic_SoC_implementation
@@ -85,12 +99,9 @@ Basic_SoC_implementation
 
 ---
 
-## 🛠️ Tech Stack & Conventions
+## Tech Stack & Conventions
 
-![Verilog](https://img.shields.io/badge/-Verilog-4C51E4?style=for-the-badge)
-![Linux](https://img.shields.io/badge/-Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Tcl](https://img.shields.io/badge/-Tcl-3776AB?style=for-the-badge)
-![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+**Tools:** Verilog, Linux, Tcl, Git, Cadence Xcelium, SimVision
 
 **Design conventions**
 
@@ -106,7 +117,7 @@ Basic_SoC_implementation
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [x] Background & Linux/CLI setup
 - [x] RTL design of basic SoC blocks (combinational / sequential / FSM)
@@ -119,9 +130,7 @@ Basic_SoC_implementation
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Hongjayeong-02**
-
-</div>
 
