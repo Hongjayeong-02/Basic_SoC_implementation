@@ -1,6 +1,6 @@
 # RTL-to-GDSII Flow — 전체 요약
 
-이 문서는 [[verilog_rtl]], [[synthesis]], [[equivalence]], [[apr]] 각 문서에서 다룬 단계를 하나의 흐름으로 엮은 요약본입니다.
+[[verilog_rtl]], [[synthesis]], [[equivalence]], [[apr]] 각 문서에서 다룬 단계를 하나의 흐름으로 엮은 요약본
 
 ```
 1_RTL                2_SIM                 3_SYN
@@ -23,7 +23,7 @@ Verilog Design  ──▶  Functional        ──▶  RTL → Gate-level
 | 5. APR | 물리적 배치·배선 | GDSII |
 
 ## 이 흐름을 직접 겪으며 느낀 점 정리용 섹션
-> (여기에 실제로 각 단계에서 겪었던 이슈, 삽질, 배운 점을 프로젝트 진행하면서 채워 넣기 — 포트폴리오로서 가장 가치 있는 부분)
+> (각 단계에서 겪었던 이슈, 삽질, 배운 점을 프로젝트 진행하면서 채워 넣기 — 
 
 - [ ] RTL 단계에서 겪은 이슈:
 - [ ] SIM 단계에서 겪은 이슈:
