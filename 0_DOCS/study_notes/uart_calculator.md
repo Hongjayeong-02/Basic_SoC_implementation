@@ -1,6 +1,6 @@
 # UART Calculator (05_FINAL_ALU 설계 노트)
 
-이 문서는 README의 "Final ALU" 섹션 뒤에 있는 **실제 설계 의도와 내부 구조**를 정리한 문서입니다. [[uart]], [[fsm]] 문서와 함께 보면 좋습니다.
+README의 "Final ALU" 섹션 뒤에 있는 **실제 설계 의도와 내부 구조**를 정리한 문서
 
 ## 전체 데이터 흐름
 ```
@@ -25,11 +25,11 @@ UART RX → Command Parser → ALU → Encoder → UART TX
 - 예: 결과값 `8'hEC` → 문자 `'E'`, `'C'` 두 바이트로 변환해 순서대로 전송
 
 ## 검증 예시 (README Example 섹션과 연결)
-| Input | 의미(추정) | Result |
+| Input | 의미 | Result |
 |:--|:--|:--|
 | `ISF6*02=` | signed 0xF6 × 0x02 | `EC` |
 | `IU10/04=` | unsigned 0x10 ÷ 0x04 | `04` |
-| `ISF00*02=` | signed 0xF00... × 0x02 | `00` |
+| `ISF00*02=` | signed 0xF0 × 0x02 | `00` |
 
 ## 본 프로젝트 연관
 - README "Final ALU" 섹션의 Data Flow/Supported Operations/Example의 구현 배경 설명
