@@ -33,22 +33,6 @@ This project explores the fundamental building blocks of an SoC and implements t
 - Getting comfortable with a Linux-based design environment and the CLI workflow.
 - Building version-control habits with Git/GitHub to document the design process.
 
----
-
-## Project Structure
-
-*What each stage of the flow does — see [Repository Layout](#repository-layout) for where it lives.*
-
-| Stage | Description |
-|:--:|:--|
-| 0 | Documentation & environment setup |
-| 1 | RTL design |
-| 2 | Functional simulation |
-| 3 | Synthesis |
-| 4 | Equivalence check |
-| 5 | APR |
-
----
 
 ## Design Flow
 
